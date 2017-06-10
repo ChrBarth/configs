@@ -24,3 +24,21 @@ set hlsearch
 nnoremap -- :normal! i-<Esc>vy79pVy5p4jo<CR><CR><Esc>
 " Taktstriche: II (fügt einen Taktstrich ein, Cursor muss sich auf oberster Tab-Linie befinden)
 nnoremap II :normal! R\|<Esc>jR\|<Esc>jR\|<Esc>jR\|<Esc>jR\|<Esc>jR\|<Esc>5kl<Esc>
+
+" change Color of StatusLine when inserting/replacing:
+au InsertEnter * hi StatusLine ctermfg=Magenta ctermbg=White
+au InsertLeave * hi StatusLine ctermfg=LightYellow ctermbg=Black
+
+" default color of StatusLine:
+hi StatusLineNC ctermfg=Darkgrey ctermbg=Black
+hi StatusLine ctermfg=LightYellow ctermbg=Black
+
+" StatusLine format:
+set statusline=%<%f\ [%{strlen(&fenc)?&fenc:'none'}]\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+set laststatus=2
+
+" Lilypond:
+filetype off
+set runtimepath+=/usr/share/lilypond/2.18.2/vim/
+filetype on
+syntax on
