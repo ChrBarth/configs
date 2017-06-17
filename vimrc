@@ -2,7 +2,6 @@
 :set autoindent
 :colo desert
 
-set runtimepath+=/usr/share/lilypond/2.10.33/vim/
 set linespace=2
 set number
 set cursorline
