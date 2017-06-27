@@ -4,7 +4,7 @@
 
 set linespace=2
 set number
-set cursorline
+"set cursorline
 set wildmenu
 set incsearch
 set hlsearch
