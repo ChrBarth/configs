@@ -17,8 +17,8 @@ UXTerm*geometry:	132x40
 *Rxvt*foreground:	white
 *Rxvt*transparent:	true
 !*Rxvt*font:		xft:Ubuntu Mono:pixelsize=16
-*Rxvt*font:		-xos4-terminus-*-*-*-*-16-*-*-*-*-*-iso10646-*,xft:teminus:pixelsize:16
-*Rxvt*boldFont:		-xos4-terminus-bold-*-*-*-16-*-*-*-*-*-iso10646-*,xft:terminus:bold:pixelsize:16
+*Rxvt*font:		-xos4-terminus-*-*-*-*-18-*-*-*-*-*-iso10646-*,xft:teminus:pixelsize:18
+*Rxvt*boldFont:		-xos4-terminus-bold-*-*-*-18-*-*-*-*-*-iso10646-*,xft:terminus:bold:pixelsize:18
 *Rxvt*shading:		5
 *Rxvt*scrollBar:	false
 *Rxvt*fading:		25
