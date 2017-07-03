@@ -1,9 +1,11 @@
-:syntax enable
-:set autoindent
-:colo desert
+syntax enable
+set autoindent
+colo desert
+let mapleader = ","
 
 set linespace=2
-set number
+"set number
+set relativenumber
 "set cursorline
 set wildmenu
 set incsearch
@@ -24,6 +26,8 @@ nnoremap -- :normal! i-<Esc>vy79pVy5p4jo<CR><CR><Esc>
 " Taktstriche: II (fügt einen Taktstrich ein, Cursor muss sich auf oberster Tab-Linie befinden)
 nnoremap II :normal! R\|<Esc>jR\|<Esc>jR\|<Esc>jR\|<Esc>jR\|<Esc>jR\|<Esc>5kl<Esc>
 
+nnoremap <leader>t :tabnew<CR>
+
 " change Color of StatusLine when inserting/replacing:
 au InsertEnter * hi StatusLine ctermfg=Magenta ctermbg=White
 au InsertLeave * hi StatusLine ctermfg=LightYellow ctermbg=Black
@@ -41,3 +45,22 @@ filetype off
 set runtimepath+=/usr/share/lilypond/2.18.2/vim/
 filetype on
 syntax on
+
+" Autocommands php/html editing:
+au FileType php,html inoremap <leader>p <p></p><Esc>FpT>i
+au FileType php,html inoremap <leader>d <div></div><Esc>FdT>i
+au FileType php,html inoremap <leader>a <a href=""></a><Esc>FaT>i
+au FileType php,html inoremap <leader>img <img src=""><Esc>2T"i
+au FileType php,html inoremap <leader>b <b></b><Esc>FbT>i
+au FileType php,html inoremap <leader>e <em></em><Esc>FeT>i
+au FileType php,html inoremap <leader>ul <ul><Return></ul><Esc>O
+au FileType php,html inoremap <leader>l <li><Esc>a
+au FileType php,html inoremap <leader>1 <h1></h1><Esc>FhT>i
+au FileType php,html inoremap <leader>2 <h2></h2><Esc>FhT>i
+au FileType php,html inoremap <leader>3 <h3></h3><Esc>FhT>i
+au FileType php,html inoremap <leader>tb <table><Return></table><Return><Esc>kO
+au FileType php,html inoremap <leader>th <th></th><Esc>FtT>i
+au FileType php,html inoremap <leader>tr <tr></tr><Esc>FtT>i
+au FileType php,html inoremap <leader>td <td></td>Esc>FtT>i
+
+au FileType php inoremap <leader>php <?php  ?><Esc>Tpi
