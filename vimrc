@@ -3,6 +3,13 @@ set autoindent
 colo desert
 let mapleader = ","
 
+" expand tabs to spaces
+set expandtab
+" one tab=4 spaces
+set tabstop=4
+" indeted lines (">") also 4 spaces
+set shiftwidth=4
+
 set linespace=2
 "set number
 set relativenumber
