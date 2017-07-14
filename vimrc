@@ -7,7 +7,7 @@ let mapleader = ","
 set expandtab
 " one tab=4 spaces
 set tabstop=4
-" indeted lines (">") also 4 spaces
+" indented lines (">") also 4 spaces
 set shiftwidth=4
 
 set linespace=2
@@ -34,6 +34,11 @@ nnoremap -- :normal! i-<Esc>vy79pVy5p4jo<CR><CR><Esc>
 nnoremap II :normal! R\|<Esc>jR\|<Esc>jR\|<Esc>jR\|<Esc>jR\|<Esc>jR\|<Esc>5kl<Esc>
 
 nnoremap <leader>t :tabnew<CR>
+
+" shortcuts for some often used configs
+nnoremap <leader>brc :tabnew<CR>:edit ~/.bashrc<CR>
+nnoremap <leader>vrc :tabnew<CR>:edit ~/.vimrc<CR>
+nnoremap <leader>i3c :tabnew<CR>:edit ~/.config/i3/config<CR>
 
 " change Color of StatusLine when inserting/replacing:
 au InsertEnter * hi StatusLine ctermfg=Magenta ctermbg=White
