@@ -41,6 +41,11 @@ alias lo='ls -lonth'
 alias i3conf='vim ~/.config/i3/config'
 alias vrc='vim ~/.vimrc'
 alias poweroff='sudo systemctl poweroff'
+alias wetter='python3 ~/src/python/wetter/wetter.py'
+# disable screensaver and energy saving for watching videos etc.:
+alias vidmode='xset -dpms s off'
+# restore screensaver and energy saving settings:
+alias novidmode='xset +dpms s on'
 
 #PROMPT_COMMAND='echo -ne "\033]0; ::xterm:: \007"'
 
