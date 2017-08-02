@@ -40,6 +40,7 @@ alias lsn='ls --color=none'
 alias lo='ls -lonth'
 alias i3conf='vim ~/.config/i3/config'
 alias vrc='vim ~/.vimrc'
+alias brc='vim ~/.bashrc'
 alias poweroff='sudo systemctl poweroff'
 alias wetter='python3 ~/src/python/wetter/wetter.py'
 # disable screensaver and energy saving for watching videos etc.:
