@@ -17,6 +17,8 @@ set relativenumber
 set wildmenu
 set incsearch
 set hlsearch
+"folding:
+set foldmethod=marker
 
 " Tabulatur-Shortcut: --
 " i = insert-Mode
