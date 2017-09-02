@@ -47,6 +47,8 @@ alias wetter='python3 ~/src/python/wetter/wetter.py'
 alias vidmode='xset -dpms s off'
 # restore screensaver and energy saving settings:
 alias novidmode='xset +dpms s on'
+# fun stuff:
+alias rot13='tr A-Za-z N-ZA-Mn-za-m'
 
 #PROMPT_COMMAND='echo -ne "\033]0; ::xterm:: \007"'
 
