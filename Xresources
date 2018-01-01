@@ -16,14 +16,18 @@ UXTerm*geometry:	132x40
 *Rxvt*background:	black
 *Rxvt*foreground:	white
 *Rxvt*transparent:	true
-!*Rxvt*font:		xft:Ubuntu Mono:pixelsize=16
-*Rxvt*font:		-xos4-terminus-*-*-*-*-18-*-*-*-*-*-iso10646-*,xft:teminus:pixelsize:18
+!*Rxvt*font:         xft:DejaVu Sans Mono:pixelsize:18
+!*Rxvt*boldFont:     xgt:DejaVu Sans Mono:bold:pixelsize:18
+!*Rxvt*font:		xft:Ubuntu Mono:pixelsize=18
+!*Rxvt*boldFont:     xft:Ubuntu Mono:bold:pixelsize=18
+*Rxvt*font:		    -xos4-terminus-*-*-*-*-18-*-*-*-*-*-iso10646-*,xft:teminus:pixelsize:18
 *Rxvt*boldFont:		-xos4-terminus-bold-*-*-*-18-*-*-*-*-*-iso10646-*,xft:terminus:bold:pixelsize:18
 *Rxvt*shading:		5
 *Rxvt*scrollBar:	false
 *Rxvt*fading:		25
 *Rxvt*colorUL:		yellow
 *Rxvt*underlineColor:	yellow
-*Rxvt*perl-ext:
-*Rxvt*perl-ext-common:
-
+*Rxvt*perl-lib: /usr/lib/urxvt/perl
+*Rxvt.perl-ext: default
+*Rxvt.perl-ext-common: default
+*Rxvt*saveLines: 8192

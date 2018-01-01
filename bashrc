@@ -41,8 +41,19 @@ alias lo='ls -lonth'
 alias i3conf='vim ~/.config/i3/config'
 alias vrc='vim ~/.vimrc'
 alias brc='vim ~/.bashrc'
+alias rrc='vim ~/.config/ranger/rc.conf'
 alias poweroff='sudo systemctl poweroff'
 alias wetter='python3 ~/src/python/wetter/wetter.py'
+alias update='sudo apt update && sudo apt upgrade'
+# games:
+alias cpma='q3start.sh +set fs_game cpma +exec c_cpma.cfg'
+alias ctf='cpma +exec c_ctf.cfg'
+alias tdm='cpma +exec c_tdm.cfg'
+alias 1v1='cpma +exec c_1v1.cfg'
+alias ffa='cpma +exec c_ffa.cfg'
+alias iffa='cpma +exec c_iffa.cfg'
+alias devmap='q3start.sh +exec c_schoen.cfg +set sv_pure 0 +devmap'
+alias q3cfg='vim ~/.q3a/baseq3/c.cfg'
 # disable screensaver and energy saving for watching videos etc.:
 alias vidmode='xset -dpms s off'
 # restore screensaver and energy saving settings:
@@ -52,7 +63,8 @@ alias rot13='tr A-Za-z N-ZA-Mn-za-m'
 
 #PROMPT_COMMAND='echo -ne "\033]0; ::xterm:: \007"'
 
-PATH="$PATH:$HOME/bin"
+PATH="$PATH:$HOME/bin:$HOME/.local/bin"
+PAGER="less"
 
 # enable bash completion in interactive shells
 if ! shopt -oq posix; then
@@ -63,3 +75,5 @@ if ! shopt -oq posix; then
       fi
   fi
 
+# enable vi-mode:
+set -o vi
