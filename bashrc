@@ -55,6 +55,7 @@ alias iffa='cpma +exec c_iffa.cfg'
 alias devmap='q3start.sh +exec c_schoen.cfg +set sv_pure 0 +devmap'
 alias q3cfg='vim ~/.q3a/baseq3/c.cfg'
 alias qw='~/Spiele/nquake/ezquake-linux-x86_64'
+alias qtv='~/Spiele/nquake/ezquake-linux-x86_64 +qwurl'
 # disable screensaver and energy saving for watching videos etc.:
 alias vidmode='xset -dpms s off'
 # restore screensaver and energy saving settings:
