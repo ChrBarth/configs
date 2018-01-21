@@ -29,5 +29,5 @@ UXTerm*geometry:	132x40
 *Rxvt*underlineColor:	yellow
 *Rxvt*perl-lib: /usr/lib/urxvt/perl
 *Rxvt.perl-ext: default
-*Rxvt.perl-ext-common: default
+*Rxvt.perl-ext-common: default,font-size
 *Rxvt*saveLines: 8192
