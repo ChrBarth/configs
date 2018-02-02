@@ -13,8 +13,8 @@ UXTerm*background:	black
 UXTerm*foreground:	white
 UXTerm*geometry:	132x40
 
-*Rxvt*background:	black
-*Rxvt*foreground:	white
+!*Rxvt*background:	black
+!*Rxvt*foreground:	white
 *Rxvt*transparent:	true
 !*Rxvt*font:         xft:DejaVu Sans Mono:pixelsize:18
 !*Rxvt*boldFont:     xgt:DejaVu Sans Mono:bold:pixelsize:18
@@ -31,3 +31,41 @@ UXTerm*geometry:	132x40
 *Rxvt.perl-ext: default
 *Rxvt.perl-ext-common: default,font-size
 *Rxvt*saveLines: 8192
+
+! custom colors:
+*.foreground:   #f0f0f0
+*.background:   #101010
+*.cursorColor:  #f0f0f0
+*.color0:       #212121
+*.color8:       #363636
+*.color1:       #8e2d2d
+*.color9:       #a94c4c
+*.color2:       #207f3a
+*.color10:      #50824c
+*.color3:       #c6cd75
+*.color11:      #d5d885
+*.color4:       #2f3a43
+*.color12:      #717ace
+*.color5:       #56395b
+*.color13:      #a05bb7
+*.color6:       #476e77
+*.color14:      #5493c2
+*.color7:       #a9a9a9
+*.color15:      #ffffff
+
+!*color0:  #212121
+!*color1:  #881f1f
+!*color2:  #197f13
+!*color3:  #ced035
+!*color4:  #1c25c4
+!*color5:  #9537b3
+!*color6:  #0b5f9b
+!*color7:  #eaeaea
+!*color8:  #484848
+!*color9:  #bc3939
+!*color10: #399e30
+!*color11: #eaef6e
+!*color12: #5862e7
+!*color13: #c98cdc
+!*color14: #279bef
+!*color15: #ffffff
