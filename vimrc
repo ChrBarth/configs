@@ -12,7 +12,7 @@ set shiftwidth=4
 
 set linespace=2
 "set number
-set relativenumber
+set number relativenumber
 "set cursorline
 set wildmenu
 set incsearch
@@ -41,6 +41,7 @@ nnoremap <leader>t :tabnew<CR>
 nnoremap <leader>brc :tabnew<CR>:edit ~/.bashrc<CR>
 nnoremap <leader>vrc :tabnew<CR>:edit ~/.vimrc<CR>
 nnoremap <leader>i3c :tabnew<CR>:edit ~/.config/i3/config<CR>
+nnoremap <leader>rrc :tabnew<CR>:edit ~/.config/ranger/rc.conf<CR>
 
 " change Color of StatusLine when inserting/replacing:
 au InsertEnter * hi StatusLine ctermfg=Magenta ctermbg=White
