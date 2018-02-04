@@ -8,7 +8,7 @@ Xft.lcdfilter:	lcddefault
 
 UXTerm*renderFont:	true
 UXTerm*faceName:	Ubuntu Mono
-UXTerm*faceSize:	12
+UXTerm*faceSize:	14
 UXTerm*background:	black
 UXTerm*foreground:	white
 UXTerm*geometry:	132x40
