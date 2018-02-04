@@ -13,15 +13,16 @@ UXTerm*background:	black
 UXTerm*foreground:	white
 UXTerm*geometry:	132x40
 
-!*Rxvt*background:	black
-!*Rxvt*foreground:	white
+!#define fontfamily 'DejaVu Sans Mono'
+!#define fontfamily 'Terminus Regular'
+!#define fontfamily 'Ubuntu Mono'
+#define fontfamily Inconsolata
+#define fontsize 18
+#define fontsizelarge 22
 *Rxvt*transparent:	true
-!*Rxvt*font:         xft:DejaVu Sans Mono:pixelsize:18
-!*Rxvt*boldFont:     xgt:DejaVu Sans Mono:bold:pixelsize:18
-!*Rxvt*font:		xft:Ubuntu Mono:pixelsize=18
-!*Rxvt*boldFont:     xft:Ubuntu Mono:bold:pixelsize=18
-*Rxvt*font:		    -xos4-terminus-*-*-*-*-18-*-*-*-*-*-iso10646-*,xft:teminus:pixelsize:18
-*Rxvt*boldFont:		-xos4-terminus-bold-*-*-*-18-*-*-*-*-*-iso10646-*,xft:terminus:bold:pixelsize:18
+*Rxvt*font:         xft:fontfamily:pixelsize=fontsize
+*Rxvt*boldFont:     xft:fontfamily:pixelsize=fontsize:bold
+*Rxvt*italicFont:   xft:fontfamily:pixelsize=fontsize:italic
 *Rxvt*shading:		5
 *Rxvt*scrollBar:	false
 *Rxvt*fading:		25
@@ -31,6 +32,13 @@ UXTerm*geometry:	132x40
 *Rxvt.perl-ext: default
 *Rxvt.perl-ext-common: default,font-size
 *Rxvt*saveLines: 8192
+
+flurxvt.font:       xft:fontfamily:pixelsize=fontsizelarge
+flurxvt.boldFont:   xft:fontfamily:pixelsize=fontsizelarge:bold
+flurxvt.italicFont: xft:fontfamily:pixelsize=fontsizelarge:italic
+flurxvt.shading:    10
+flurxvt.fading:     15
+flurxvt.fadeColor:  #101010
 
 ! custom colors:
 *.foreground:   #f0f0f0
@@ -52,20 +60,3 @@ UXTerm*geometry:	132x40
 *.color14:      #5493c2
 *.color7:       #a9a9a9
 *.color15:      #ffffff
-
-!*color0:  #212121
-!*color1:  #881f1f
-!*color2:  #197f13
-!*color3:  #ced035
-!*color4:  #1c25c4
-!*color5:  #9537b3
-!*color6:  #0b5f9b
-!*color7:  #eaeaea
-!*color8:  #484848
-!*color9:  #bc3939
-!*color10: #399e30
-!*color11: #eaef6e
-!*color12: #5862e7
-!*color13: #c98cdc
-!*color14: #279bef
-!*color15: #ffffff
