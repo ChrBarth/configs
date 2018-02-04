@@ -42,6 +42,7 @@ nnoremap <leader>brc :tabnew<CR>:edit ~/.bashrc<CR>
 nnoremap <leader>vrc :tabnew<CR>:edit ~/.vimrc<CR>
 nnoremap <leader>i3c :tabnew<CR>:edit ~/.config/i3/config<CR>
 nnoremap <leader>rrc :tabnew<CR>:edit ~/.config/ranger/rc.conf<CR>
+nnoremap <leader>xr :tabnew<CR>:edit ~/.Xresources<CR>
 
 " change Color of StatusLine when inserting/replacing:
 au InsertEnter * hi StatusLine ctermfg=Magenta ctermbg=White

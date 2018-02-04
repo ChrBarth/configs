@@ -45,6 +45,8 @@ alias rrc='vim ~/.config/ranger/rc.conf'
 alias poweroff='sudo systemctl poweroff'
 alias wetter='python3 ~/src/python/wetter/wetter.py'
 alias update='sudo apt update && sudo apt upgrade'
+alias xm='xrdb -merge ~/.Xresources'
+alias xr='vim ~/.Xresources'
 # games:
 alias cpma='q3start.sh +set fs_game cpma +exec c_cpma.cfg'
 alias ctf='cpma +exec c_ctf.cfg'
