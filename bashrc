@@ -64,6 +64,23 @@ alias vidmode='xset -dpms s off'
 alias novidmode='xset +dpms s on'
 # fun stuff:
 alias rot13='tr A-Za-z N-ZA-Mn-za-m'
+# tmux stuff:
+# htop in the lower half of the screen, alsamixer in the top left and .xsession-errors in the top right:
+alias sysmon='tmux split-window "htop" \; split-window -h "tail -f ~/.xsession-errors"; alsamixer'
+
+# smartphone stuff (adb)
+alias battery='adb shell dumpsys batterymanager | grep level'
+
+# webcam stuff:
+# displays the webcams output using mplayer:
+alias showcam='mplayer tv:// -tv driver=v4l2:width=1280:height=720:device=/dev/video0'
+# records from webcam to file:
+alias recordcam='ffmpeg -v 0 -hide_banner -f video4linux2 -s 1920x1080 -i /dev/video0 ~/Videos/EigeneVideos/wc_$(date +"%Y-%m-%d_%H%M%S").mkv'
+
+# grab screen into video:
+alias screencast='ffmpeg -v 0 -hide_banner -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0 -f pulse -ac 2 -i default ~/Videos/Screencasts/screencast$(date +"%Y-%m-%d_%H%M%S").mkv'
+alias screencast_alsa='ffmpeg -v 0 -hide_banner -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0 -f alsa -ac 2 -i default ~/Videos/Screencasts/screencast$(date +"%Y-%m-%d_%H%M%S").mkv'
+alias screencast_mute='ffmpeg -v 0 -hide_banner -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0 ~/Videos/Screencasts/screencast$(date +"%Y-%m-%d_%H%M%S").mkv'
 
 #PROMPT_COMMAND='echo -ne "\033]0; ::xterm:: \007"'
 
