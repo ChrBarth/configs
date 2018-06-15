@@ -78,9 +78,9 @@ alias showcam='mplayer tv:// -tv driver=v4l2:width=1280:height=720:device=/dev/v
 alias recordcam='ffmpeg -v 0 -hide_banner -f video4linux2 -s 1920x1080 -i /dev/video0 ~/Videos/EigeneVideos/wc_$(date +"%Y-%m-%d_%H%M%S").mkv'
 
 # grab screen into video:
-alias screencast='ffmpeg -v 0 -hide_banner -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0 -f pulse -ac 2 -i default ~/Videos/Screencasts/screencast$(date +"%Y-%m-%d_%H%M%S").mkv'
-alias screencast_alsa='ffmpeg -v 0 -hide_banner -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0 -f alsa -ac 2 -i default ~/Videos/Screencasts/screencast$(date +"%Y-%m-%d_%H%M%S").mkv'
-alias screencast_mute='ffmpeg -v 0 -hide_banner -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0 ~/Videos/Screencasts/screencast$(date +"%Y-%m-%d_%H%M%S").mkv'
+alias screencast='ffmpeg -hide_banner -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0 -f pulse -ac 2 -i default -vcodec libx264 -acodec flac ~/Videos/Screencasts/screencast$(date +"%Y-%m-%d_%H%M%S").mkv'
+alias screencast_alsa='ffmpeg -hide_banner -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0 -f alsa -ac 2 -i default -vcodec libx264 -acodec flac ~/Videos/Screencasts/screencast$(date +"%Y-%m-%d_%H%M%S").mkv'
+alias screencast_mute='ffmpeg -hide_banner -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0 -vcodec libx264 ~/Videos/Screencasts/screencast$(date +"%Y-%m-%d_%H%M%S").mkv'
 
 #PROMPT_COMMAND='echo -ne "\033]0; ::xterm:: \007"'
 
