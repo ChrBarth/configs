@@ -44,7 +44,7 @@ alias brc='vim ~/.bashrc'
 alias rrc='vim ~/.config/ranger/rc.conf'
 alias poweroff='sudo systemctl poweroff'
 alias wetter='python3 ~/src/python/wetter/wetter.py'
-alias update='sudo apt update && sudo apt upgrade'
+alias update='sudo apt --yes update && sudo apt --yes upgrade'
 alias xm='xrdb -merge ~/.Xresources'
 alias xr='vim ~/.Xresources'
 # games:
