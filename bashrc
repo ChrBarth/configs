@@ -47,6 +47,7 @@ alias wetter='python3 ~/src/python/wetter/wetter.py'
 alias update='sudo apt --yes update && sudo apt --yes upgrade'
 alias xm='xrdb -merge ~/.Xresources'
 alias xr='vim ~/.Xresources'
+alias xlog='journalctl -u session-${XDG_SESSION_ID}.scope'
 # games:
 alias cpma='q3start.sh +set fs_game cpma +exec c_cpma.cfg'
 alias ctf='cpma +exec c_ctf.cfg'
