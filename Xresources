@@ -22,7 +22,7 @@ UXTerm*geometry:	132x40
 !*Rxvt.letterSpace: 1
 !increase spacing between characters so some 
 !special ones get displayed
-*Rxvt*transparent:	true
+!*Rxvt*transparent:	true
 *Rxvt*font:         xft:fontfamily:pixelsize=fontsize
 *Rxvt*boldFont:     xft:fontfamily:pixelsize=fontsize:bold
 *Rxvt*italicFont:   xft:fontfamily:pixelsize=fontsize:italic

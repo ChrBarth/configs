@@ -86,6 +86,7 @@ alias screencast_mute='ffmpeg -hide_banner -video_size 1920x1080 -framerate 30 -
 
 PATH="$PATH:$HOME/bin:$HOME/.local/bin"
 PAGER="less"
+EDITOR="vim"
 
 # enable bash completion in interactive shells
 if ! shopt -oq posix; then
