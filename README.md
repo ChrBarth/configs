@@ -11,3 +11,4 @@
   + vimrc -> ~/.vimrc
   + Xmodmap -> ~/.Xmodmap
   + Xresources -> ~/.Xresources
+  + prompt_git.sh -> ~/bin/prompt_git.sh

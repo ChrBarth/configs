@@ -25,8 +25,9 @@ export LS_COLORS
 # Background color codes:
 # 40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
 ####
-
-PS1="$DGY_ON_GY\W $BU_ON_GY\$$NO_COLOR "
+# \$(~/bin/prompt_git.sh)
+# "\$(...)" so the script gets executed every time the prompt is displayed
+PS1="$DGY_ON_GY\W $BU_ON_GY$NO_COLOR\$(~/bin/prompt_git.sh)\$ "
 
 # Aliase
 alias ls='ls --color=tty --group-directories-first'
