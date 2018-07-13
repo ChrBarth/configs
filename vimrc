@@ -80,3 +80,6 @@ au FileType php,html inoremap <leader>tr <tr></tr><Esc>FtT>i
 au FileType php,html inoremap <leader>td <td></td>Esc>FtT>i
 
 au FileType php inoremap <leader>php <?php  ?><Esc>Tpi
+
+" set filetype to css when loading .rasi files (rofi config):
+au BufRead,BufNewFile *.rasi set filetype=css
