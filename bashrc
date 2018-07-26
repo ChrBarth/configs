@@ -30,15 +30,16 @@ export LS_COLORS
 PS1="$DGY_ON_GY\W $BU_ON_GY$NO_COLOR\$(~/bin/prompt_git.sh)\$ "
 
 # Aliase
-alias ls='ls --color=tty --group-directories-first'
-alias l='ls --color=tty'
+alias ls='ls --color=auto --group-directories-first'
+alias l='ls --color=auto'
 alias l.='ls -ld .*'
 alias cls='tput clear'
 alias du='du -h'
 alias df='df -h'
-alias ll='ls -lhG --color=tty'
+alias ll='ls -lhG --color=auto'
 alias lsn='ls --color=none'
 alias lo='ls -lonth'
+alias please='sudo $(history -p !!)'
 alias i3c='vim ~/.config/i3/config'
 alias vrc='vim ~/.vimrc'
 alias brc='vim ~/.bashrc'
