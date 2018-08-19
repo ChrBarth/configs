@@ -15,7 +15,7 @@ UXTerm*geometry:	132x40
 
 !#define fontfamily 'DejaVu Sans Mono'
 !#define fontfamily 'Terminus Regular'
-!#define fontfamily 'Ubuntu Mono'
+!#define fontfamily 'Ubuntu Mono Regular'
 #define fontfamily Inconsolata
 #define fontsize 20
 #define fontsizelarge 22
