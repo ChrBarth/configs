@@ -1,3 +1,6 @@
+" my .vimrc
+
+" misc settings: {{{
 syntax enable
 set autoindent
 colo desert
@@ -19,31 +22,42 @@ set incsearch
 set hlsearch
 "folding:
 set foldmethod=marker
+" }}}
 
-" Tabulatur-Shortcut: --
-" i = insert-Mode
-" - = ein "-" eingeben
-" <Esc> = zurück in Normal-Mode
-" vy = visual mode aktuelles Zeichen markieren und kopieren
-" 79p = und 79x pasten
-" Vy = ganze Zeile im Visual-Mode markieren und kopieren
-" 5p = das ganze 5x einfügen (jetzt haben wir 6 Zeilen mit je 80 "-")
-" 4j = 4 Zeilen nach unten gehen
-" o = Zeile darunter einfügen
-" <CR><CR><Esc> = 2 Leerzeilen druntersetzen und Insert-Mode verlassen
+" key mappings: {{{
+" from https://www.youtube.com/watch?v=2pqipq-UEwQ:
+" (disable arrow keys, up and down move line up/down)
+no <down> ddp
+no <left> <Nop>
+no <right> <Nop>
+no <up> ddkP
+ino <down> <Nop>
+ino <up> <Nop>
+ino <left> <Nop>
+ino <right> <Nop>
+vno <down> <Nop>
+vno <up> <Nop>
+vno <left> <Nop>
+vno <right> <Nop>
+imap <Leader>' ''<Esc>i
+imap <Leader>" ""<Esc>i
+imap <Leader>( ()<Esc>i
+imap <Leader>[ []<Esc>i
+" guitar-tab-shortcut: --
 nnoremap -- :normal! i-<Esc>vy79pVy5p4jo<CR><CR><Esc>
 " Taktstriche: II (fügt einen Taktstrich ein, Cursor muss sich auf oberster Tab-Linie befinden)
 nnoremap II :normal! R\|<Esc>jR\|<Esc>jR\|<Esc>jR\|<Esc>jR\|<Esc>jR\|<Esc>5kl<Esc>
-
 nnoremap <leader>t :tabnew<CR>
-
 " shortcuts for some often used configs
 nnoremap <leader>brc :tabnew<CR>:edit ~/.bashrc<CR>
-nnoremap <leader>vrc :tabnew<CR>:edit ~/.vimrc<CR>
+nnoremap <leader>vrc :tabnew<CR>:edit $MYVIMRC<CR>
 nnoremap <leader>i3c :tabnew<CR>:edit ~/.config/i3/config<CR>
 nnoremap <leader>rrc :tabnew<CR>:edit ~/.config/ranger/rc.conf<CR>
 nnoremap <leader>xr :tabnew<CR>:edit ~/.Xresources<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR><CR>
+" }}}
 
+" StatusLine stuff: {{{
 " change Color of StatusLine when inserting/replacing:
 au InsertEnter * hi StatusLine ctermfg=Magenta ctermbg=White
 au InsertLeave * hi StatusLine ctermfg=LightYellow ctermbg=Black
@@ -55,7 +69,9 @@ hi StatusLine ctermfg=LightYellow ctermbg=Black
 " StatusLine format:
 set statusline=%<%f\ [%{strlen(&fenc)?&fenc:'none'}]\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 set laststatus=2
+" }}}
 
+" Syntax stuff: {{{
 " Lilypond:
 filetype off
 set runtimepath+=/usr/share/lilypond/2.18.2/vim/
@@ -83,3 +99,7 @@ au FileType php inoremap <leader>php <?php  ?><Esc>Tpi
 
 " set filetype to css when loading .rasi files (rofi config):
 au BufRead,BufNewFile *.rasi set filetype=css
+
+au BufRead,BufNewFile ~/Mail/account.* set filetype=muttrc
+" }}}
+
