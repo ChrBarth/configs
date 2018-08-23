@@ -1,6 +1,12 @@
 " my .vimrc
 
 " misc settings: {{{
+
+" Lilypond:
+filetype off
+set runtimepath+=/usr/share/lilypond/2.18.2/vim/
+filetype on
+
 syntax enable
 set autoindent
 colo desert
@@ -39,10 +45,26 @@ vno <down> <Nop>
 vno <up> <Nop>
 vno <left> <Nop>
 vno <right> <Nop>
-imap <Leader>' ''<Esc>i
-imap <Leader>" ""<Esc>i
-imap <Leader>( ()<Esc>i
-imap <Leader>[ []<Esc>i
+" switch word with next one (does not always work as expected):
+nnoremap <Leader>sw bvelxel"-p
+nnoremap <Leader>sW BvElxEl"-p
+inoremap jk <Esc>
+inoremap <Leader>' ''<Esc>i
+inoremap <Leader>" ""<Esc>i
+inoremap <Leader>( ()<Esc>i
+inoremap <Leader>[ []<Esc>i
+" put quotes/brackets/... around selection:
+vnoremap <Leader>" <Esc>`<i"<Esc>`>la"
+vnoremap <Leader>' <Esc>`<i'<Esc>`>la'
+vnoremap <Leader>( <Esc>`<i(<Esc>`>la)
+vnoremap <Leader>[ <Esc>`<i[<Esc>`>la]
+vnoremap <Leader>{ <Esc>`<i{<Esc>`>la}
+" same mappings for visual line mode (V):
+vnoremap <Leader>"" <Esc>`<i"<Esc>`>a"
+vnoremap <Leader>'' <Esc>`<i'<Esc>`>a'
+vnoremap <Leader>(( <Esc>`<i(<Esc>`>a)
+vnoremap <Leader>[[ <Esc>`<i[<Esc>`>a]
+vnoremap <Leader>{{ <Esc>`<i{<Esc>`>a}
 " guitar-tab-shortcut: --
 nnoremap -- :normal! i-<Esc>vy79pVy5p4jo<CR><CR><Esc>
 " Taktstriche: II (fügt einen Taktstrich ein, Cursor muss sich auf oberster Tab-Linie befinden)
@@ -55,6 +77,13 @@ nnoremap <leader>i3c :tabnew<CR>:edit ~/.config/i3/config<CR>
 nnoremap <leader>rrc :tabnew<CR>:edit ~/.config/ranger/rc.conf<CR>
 nnoremap <leader>xr :tabnew<CR>:edit ~/.Xresources<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR><CR>
+nnoremap <Leader><Space> viw
+nnoremap <Leader><Space><Space> viW
+nnoremap <c-a> ggVG
+vnoremap <Leader>C "+y
+nnoremap <Leader>V "+p
+vnoremap <Leader>X "+x
+
 " }}}
 
 " StatusLine stuff: {{{
@@ -72,34 +101,48 @@ set laststatus=2
 " }}}
 
 " Syntax stuff: {{{
-" Lilypond:
-filetype off
-set runtimepath+=/usr/share/lilypond/2.18.2/vim/
-filetype on
-syntax on
+augroup php_html
+    autocmd!
+    " Autocommands php/html editing:
+    au FileType php,html inoremap <leader>p <p></p><Esc>FpT>i
+    au FileType php,html inoremap <leader>d <div></div><Esc>FdT>i
+    au FileType php,html inoremap <leader>a <a href=""></a><Esc>FaT>i
+    au FileType php,html inoremap <leader>img <img src=""><Esc>2T"i
+    au FileType php,html inoremap <leader>b <b></b><Esc>FbT>i
+    au FileType php,html inoremap <leader>e <em></em><Esc>FeT>i
+    au FileType php,html inoremap <leader>ul <ul><Return></ul><Esc>O
+    au FileType php,html inoremap <leader>l <li><Esc>a
+    au FileType php,html inoremap <leader>1 <h1></h1><Esc>FhT>i
+    au FileType php,html inoremap <leader>2 <h2></h2><Esc>FhT>i
+    au FileType php,html inoremap <leader>3 <h3></h3><Esc>FhT>i
+    au FileType php,html inoremap <leader>tb <table><Return></table><Return><Esc>kO
+    au FileType php,html inoremap <leader>th <th></th><Esc>FtT>i
+    au FileType php,html inoremap <leader>tr <tr></tr><Esc>FtT>i
+    au FileType php,html inoremap <leader>td <td></td><Esc>FtT>i
+    au FileType php inoremap <leader>c <Esc>I/*  */<Esc>hhi
+    au FileType php inoremap <leader>php <?php  ?><Esc>Tpi
+augroup END
 
-" Autocommands php/html editing:
-au FileType php,html inoremap <leader>p <p></p><Esc>FpT>i
-au FileType php,html inoremap <leader>d <div></div><Esc>FdT>i
-au FileType php,html inoremap <leader>a <a href=""></a><Esc>FaT>i
-au FileType php,html inoremap <leader>img <img src=""><Esc>2T"i
-au FileType php,html inoremap <leader>b <b></b><Esc>FbT>i
-au FileType php,html inoremap <leader>e <em></em><Esc>FeT>i
-au FileType php,html inoremap <leader>ul <ul><Return></ul><Esc>O
-au FileType php,html inoremap <leader>l <li><Esc>a
-au FileType php,html inoremap <leader>1 <h1></h1><Esc>FhT>i
-au FileType php,html inoremap <leader>2 <h2></h2><Esc>FhT>i
-au FileType php,html inoremap <leader>3 <h3></h3><Esc>FhT>i
-au FileType php,html inoremap <leader>tb <table><Return></table><Return><Esc>kO
-au FileType php,html inoremap <leader>th <th></th><Esc>FtT>i
-au FileType php,html inoremap <leader>tr <tr></tr><Esc>FtT>i
-au FileType php,html inoremap <leader>td <td></td>Esc>FtT>i
+augroup python_programming
+	autocmd!
+    au FileType python nnoremap <Leader>c I#<Esc>
+augroup END
 
-au FileType php inoremap <leader>php <?php  ?><Esc>Tpi
+augroup lilypond
+	autocmd!
+    source $HOME/.vim/include/lilycomp.vim
+	au FileType lilypond nnoremap <Leader>c I%<Esc>
+    au filetype lilypond inoremap <leader>rv \repeat volta 2 {  }<Esc>hi
+    au FileType lilypond inoremap <Leader>ru \repeat unfold 2 {  }<Esc>hi
+    " creates pdf from lilypond-file and previews it with xdg-open:
+    au FileType lilypond nnoremap <leader>lc :execute "call LilyComp()"<CR>
+augroup END
 
-" set filetype to css when loading .rasi files (rofi config):
-au BufRead,BufNewFile *.rasi set filetype=css
-
-au BufRead,BufNewFile ~/Mail/account.* set filetype=muttrc
+augroup special_filetypes
+    autocmd!
+    " set filetype to css when loading .rasi files (rofi config):
+    au BufRead,BufNewFile *.rasi set filetype=css
+    au BufRead,BufNewFile ~/Mail/account.* set filetype=muttrc
+augroup END
 " }}}
 
