@@ -93,6 +93,9 @@ PATH="$PATH:$HOME/bin:$HOME/.local/bin"
 PAGER="less"
 EDITOR="vim"
 
+export HISTIGNORE="clear:history:cls"
+export HISTCONTROL="ignoreboth"
+
 # enable bash completion in interactive shells
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
