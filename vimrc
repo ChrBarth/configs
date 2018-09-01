@@ -24,8 +24,8 @@ set linespace=2
 set number relativenumber
 "set cursorline
 set wildmenu
-set incsearch
 set hlsearch
+set incsearch
 "folding:
 set foldmethod=marker
 " }}}
@@ -48,6 +48,7 @@ vno <right> <Nop>
 " switch word with next one (does not always work as expected):
 nnoremap <Leader>sw bvelxel"-p
 nnoremap <Leader>sW BvElxEl"-p
+nnoremap / /\v
 inoremap jk <Esc>
 inoremap <Leader>' ''<Esc>i
 inoremap <Leader>" ""<Esc>i
