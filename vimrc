@@ -77,6 +77,7 @@ nnoremap <leader>vrc :tabnew<CR>:edit $MYVIMRC<CR>
 nnoremap <leader>i3c :tabnew<CR>:edit ~/.config/i3/config<CR>
 nnoremap <leader>rrc :tabnew<CR>:edit ~/.config/ranger_base.conf<CR>
 nnoremap <leader>xr :tabnew<CR>:edit ~/.Xresources<CR>
+nnoremap <leader>fs :tabnew<CR>:edit ~/.config/folder_shortcuts.txt<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR><CR>
 nnoremap <Leader><Space> viw
 nnoremap <Leader><Space><Space> viW

@@ -6,16 +6,18 @@
 # TODO: Leerzeichen in Verzeichnisnamen escapen!
 h	~
 v	~/Videos
+ve	~/Videos/EigeneVideos
 b	~/Bilder
 bf	~/Bilder/fotos
 bs	~/Bilder/screenshots
 bw	~/Bilder/wallpapers
 d	~/Dokumente
-ddm	~/Dokumente/Musik/Depeche Mode
-dmm	~/Dokumente/Musik/MothersMilk
-de	~/Dokumente/Musik/eigene_transkriptionen
+ddm	~/Dokumente/musik/Depeche Mode
+dmm	~/Dokumente/musik/MothersMilk
+de	~/Dokumente/musik/eigene_transkriptionen
 s	~/src
 sgi	~/src/git
 sp	~/src/python
 S	~/Studio
+Sr	~/Studio/riffs
 m	~/Musik

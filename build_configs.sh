@@ -27,7 +27,8 @@ echo -e "\n# folder mappings:" > $TMP_RANGERMAPPINGS
 echo -e "\n# folder aliases:" > $TMP_BASHRC
 
 # parse SHORTCUTSFILE and create temporary config files:
-cat $SHORTCUTSFILE | awk 'BEGIN {FS="\t"} /^[^#]/ { printf("alias %s=\"cd %s\"\n",$1,$2) >> "bash_aliases.tmp" ; printf("map g%s %s\n", $1, $2) >> "ranger_mappings.tmp" }'
+cat $SHORTCUTSFILE | \
+awk 'BEGIN {FS="\t"} /^[^#]/ { gsub(" ","\\ ",$2); printf("alias %s=\"cd %s\"\n",$1,$2) >> "bash_aliases.tmp" ; printf("map g%s %s\n", $1, $2) >> "ranger_mappings.tmp" }'
 
 # check exit status of previous command
 if [ $? != 0 ]
