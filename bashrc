@@ -45,6 +45,7 @@ alias i3c='vim ~/.config/i3/config'
 alias vrc='vim ~/.vimrc'
 alias brc='vim ~/.config/bashrc_base'
 alias rrc='vim ~/.config/ranger_base.conf'
+alias vfs='vim ~/.config/folder_shortcuts.txt'
 alias poweroff='sudo systemctl poweroff'
 alias wetter='python3 ~/src/python/wetter/wetter.py'
 alias update='sudo apt --yes update && sudo apt --yes upgrade'
@@ -66,6 +67,7 @@ alias devmap='q3start.sh +exec c_schoen.cfg +set sv_pure 0 +devmap'
 alias q3cfg='vim ~/.q3a/baseq3/c.cfg'
 alias qw='~/Spiele/nquake/ezquake-linux-x86_64'
 alias qtv='~/Spiele/nquake/ezquake-linux-x86_64 +qwurl'
+alias fs="cat ~/.config/folder_shortcuts.txt | awk 'BEGIN { FS=\"\t\" } /^[^#]/ { printf(\"%5s -> %s\n\", \$1,\$2) }'"
 # disable screensaver and energy saving for watching videos etc.:
 alias vidmode='xset -dpms s off'
 # restore screensaver and energy saving settings:
@@ -115,6 +117,7 @@ set -o vi
 # folder aliases:
 alias h="cd ~"
 alias v="cd ~/Videos"
+alias ve="cd ~/Videos/EigeneVideos"
 alias b="cd ~/Bilder"
 alias bf="cd ~/Bilder/fotos"
 alias bs="cd ~/Bilder/screenshots"
@@ -125,6 +128,9 @@ alias dmm="cd ~/Dokumente/musik/MothersMilk"
 alias de="cd ~/Dokumente/musik/eigene_transkriptionen"
 alias s="cd ~/src"
 alias sgi="cd ~/src/git"
+alias sgic="cd ~/src/git/configs"
+alias sgi3="cd ~/src/git/i3wm-configs"
 alias sp="cd ~/src/python"
 alias S="cd ~/Studio"
+alias Sr="cd ~/Studio/riffs"
 alias m="cd ~/Musik"

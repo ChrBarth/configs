@@ -17,6 +17,8 @@ dmm	~/Dokumente/musik/MothersMilk
 de	~/Dokumente/musik/eigene_transkriptionen
 s	~/src
 sgi	~/src/git
+sgic	~/src/git/configs
+sgi3	~/src/git/i3wm-configs
 sp	~/src/python
 S	~/Studio
 Sr	~/Studio/riffs
