@@ -111,20 +111,3 @@ if ! shopt -oq posix; then
 # enable vi-mode:
 set -o vi
 
-
-# folder aliases:
-alias h="cd ~"
-alias v="cd ~/Videos"
-alias b="cd ~/Bilder"
-alias bf="cd ~/Bilder/fotos"
-alias bs="cd ~/Bilder/screenshots"
-alias bw="cd ~/Bilder/wallpapers"
-alias d="cd ~/Dokumente"
-alias ddm="cd ~/Dokumente/Musik/Depeche Mode"
-alias dmm="cd ~/Dokumente/Musik/MothersMilk"
-alias de="cd ~/Dokumente/Musik/eigene_transkriptionen"
-alias s="cd ~/src"
-alias sgi="cd ~/src/git"
-alias sp="cd ~/src/python"
-alias S="cd ~/Studio"
-alias m="cd ~/Musik"

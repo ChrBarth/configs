@@ -1,0 +1,21 @@
+# folder-shortcuts for ranger and .bashrc
+# 1st column: shortcut
+# 2nd column: path
+# cat .config/folder_shortcuts.txt | awk 'BEGIN {FS="\t"} /^[^#]/ { printf("alias \"%s\"=\"cd %s\"\n",$1,$2) }'
+# tabs in vim mit tabexpand: CTRL-V <TAB> (im insert-mode)!
+# TODO: Leerzeichen in Verzeichnisnamen escapen!
+h	~
+v	~/Videos
+b	~/Bilder
+bf	~/Bilder/fotos
+bs	~/Bilder/screenshots
+bw	~/Bilder/wallpapers
+d	~/Dokumente
+ddm	~/Dokumente/Musik/Depeche Mode
+dmm	~/Dokumente/Musik/MothersMilk
+de	~/Dokumente/Musik/eigene_transkriptionen
+s	~/src
+sgi	~/src/git
+sp	~/src/python
+S	~/Studio
+m	~/Musik

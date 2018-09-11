@@ -72,10 +72,10 @@ nnoremap -- :normal! i-<Esc>vy79pVy5p4jo<CR><CR><Esc>
 nnoremap II :normal! R\|<Esc>jR\|<Esc>jR\|<Esc>jR\|<Esc>jR\|<Esc>jR\|<Esc>5kl<Esc>
 nnoremap <leader>t :tabnew<CR>
 " shortcuts for some often used configs
-nnoremap <leader>brc :tabnew<CR>:edit ~/.bashrc<CR>
+nnoremap <leader>brc :tabnew<CR>:edit ~/.config/bashrc_base<CR>
 nnoremap <leader>vrc :tabnew<CR>:edit $MYVIMRC<CR>
 nnoremap <leader>i3c :tabnew<CR>:edit ~/.config/i3/config<CR>
-nnoremap <leader>rrc :tabnew<CR>:edit ~/.config/ranger/rc.conf<CR>
+nnoremap <leader>rrc :tabnew<CR>:edit ~/.config/ranger_base.conf<CR>
 nnoremap <leader>xr :tabnew<CR>:edit ~/.Xresources<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR><CR>
 nnoremap <Leader><Space> viw
