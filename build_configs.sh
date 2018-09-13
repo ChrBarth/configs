@@ -27,8 +27,16 @@ echo -e "\n# folder mappings:" > $TMP_RANGERMAPPINGS
 echo -e "\n# folder aliases:" > $TMP_BASHRC
 
 # parse SHORTCUTSFILE and create temporary config files:
+# using <(cat... so we can use single-quotes in aliases for .bashrc:
 cat $SHORTCUTSFILE | \
-awk 'BEGIN {FS="\t"} /^[^#]/ { printf("map g%s cd %s\n", $1, $2) >> "ranger_mappings.tmp" ; gsub(" ","\\ ",$2); printf("alias %s=\"cd %s\"\n",$1,$2) >> "bash_aliases.tmp" }'
+awk -f <(cat - <<-'_EOT_'
+BEGIN{FS="\t"}
+/^[^#]/ { 
+    printf("map g%s cd %s\n", $1, $2) >> "ranger_mappings.tmp" ;
+    gsub(" ","\\ ",$2);
+    printf("alias %s='cd %s'\n",$1,$2) >> "bash_aliases.tmp" }
+_EOT_
+)
 
 # check exit status of previous command
 if [ $? != 0 ]
@@ -39,6 +47,7 @@ fi
 
 # create ~/.bashrc
 cat $BASHRC_BASE $TMP_BASHRC > ${HOME}/.bashrc
+echo "" >> ${HOME}/.bashrc
 # create /.config/ranger/rc.conf
 cat $RANGER_BASE $TMP_RANGERMAPPINGS > ${HOME}/.config/ranger/rc.conf
 

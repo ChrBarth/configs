@@ -1,12 +1,12 @@
-# .bashrc
+# my .bashrc
 # do not edit ~/.bashrc directly
 # edit ~/.config/bashrc_base and then run ~/bin/build_configs.sh
 
 # User specific aliases and functions
 
 # Source global definitions
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+if [ -f /etc/bash.bashrc ]; then
+	. /etc/bash.bashrc
 fi
 
 # Prompt:
@@ -34,18 +34,21 @@ PS1="$DGY_ON_GY\W $BU_ON_GY$NO_COLOR\$(~/bin/prompt_git.sh)\$ "
 alias ls='ls --color=auto --group-directories-first'
 alias l='ls --color=auto'
 alias l.='ls -ld .*'
-alias cls='tput clear'
-alias du='du -h'
-alias df='df -h'
 alias ll='ls -lhG --color=auto'
 alias lsn='ls --color=none'
 alias lo='ls -lonth'
+alias cls='tput clear'
+alias du='du -h'
+alias df='df -h'
 alias please='sudo $(history -p !!)'
-alias i3c='vim ~/.config/i3/config'
-alias vrc='vim ~/.vimrc'
-alias brc='vim ~/.config/bashrc_base'
-alias rrc='vim ~/.config/ranger_base.conf'
-alias vfs='vim ~/.config/folder_shortcuts.txt'
+alias v='vim'
+alias i3c='v ~/.config/i3/config'
+alias vrc='v ~/.vimrc'
+alias brc='v ~/.config/bashrc_base'
+alias rrc='v ~/.config/ranger_base.conf'
+alias vfs='v ~/.config/folder_shortcuts.txt'
+alias xr='v ~/.Xresources'
+alias q3cfg='v ~/.q3a/baseq3/c.cfg'
 alias poweroff='sudo systemctl poweroff'
 alias wetter='python3 ~/src/python/wetter/wetter.py'
 alias update='sudo apt --yes update && sudo apt --yes upgrade'
@@ -54,7 +57,6 @@ alias ssh_off='sudo systemctl stop ssh.service'
 alias xpaste='xclip -out -selection clipboard'
 alias xcopy='xclip -in -selection clipboard'
 alias xm='xrdb -merge ~/.Xresources'
-alias xr='vim ~/.Xresources'
 alias xlog='journalctl -u session-${XDG_SESSION_ID}.scope'
 # games:
 alias cpma='q3start.sh +set fs_game cpma +exec c_cpma.cfg'
@@ -64,7 +66,6 @@ alias 1v1='cpma +exec c_1v1.cfg'
 alias ffa='cpma +exec c_ffa.cfg'
 alias iffa='cpma +exec c_iffa.cfg'
 alias devmap='q3start.sh +exec c_schoen.cfg +set sv_pure 0 +devmap'
-alias q3cfg='vim ~/.q3a/baseq3/c.cfg'
 alias qw='~/Spiele/nquake/ezquake-linux-x86_64'
 alias qtv='~/Spiele/nquake/ezquake-linux-x86_64 +qwurl'
 alias fs="cat ~/.config/folder_shortcuts.txt | awk 'BEGIN { FS=\"\t\" } /^[^#]/ { printf(\"%5s -> %s\n\", \$1,\$2) }'"
@@ -107,30 +108,31 @@ if ! shopt -oq posix; then
       . /usr/share/bash-completion/bash_completion
   elif [ -f /etc/bash_completion ]; then
        . /etc/bash_completion
-      fi
   fi
+fi
 
 # enable vi-mode:
 set -o vi
 
 
 # folder aliases:
-alias h="cd ~"
-alias vi="cd ~/Videos"
-alias ve="cd ~/Videos/EigeneVideos"
-alias bi="cd ~/Bilder"
-alias bf="cd ~/Bilder/fotos"
-alias bs="cd ~/Bilder/screenshots"
-alias bw="cd ~/Bilder/wallpapers"
-alias do="cd ~/Dokumente"
-alias ddm="cd ~/Dokumente/musik/Depeche\ Mode"
-alias dmm="cd ~/Dokumente/musik/MothersMilk"
-alias de="cd ~/Dokumente/musik/eigene_transkriptionen"
-alias sr="cd ~/src"
-alias sgg="cd ~/src/git"
-alias sgc="cd ~/src/git/configs"
-alias sgi="cd ~/src/git/i3wm-configs"
-alias sp="cd ~/src/python"
-alias St="cd ~/Studio"
-alias Sr="cd ~/Studio/riffs"
-alias m="cd ~/Musik"
+alias h='cd ~'
+alias vd='cd ~/Videos'
+alias ve='cd ~/Videos/EigeneVideos'
+alias bi='cd ~/Bilder'
+alias bf='cd ~/Bilder/fotos'
+alias bs='cd ~/Bilder/screenshots'
+alias bw='cd ~/Bilder/wallpapers'
+alias dok='cd ~/Dokumente'
+alias ddm='cd ~/Dokumente/musik/Depeche\ Mode'
+alias dmm='cd ~/Dokumente/musik/MothersMilk'
+alias de='cd ~/Dokumente/musik/eigene_transkriptionen'
+alias sr='cd ~/src'
+alias sgg='cd ~/src/git'
+alias sgc='cd ~/src/git/configs'
+alias sgi='cd ~/src/git/i3wm-configs'
+alias sp='cd ~/src/python'
+alias St='cd ~/Studio'
+alias Sr='cd ~/Studio/riffs'
+alias m='cd ~/Musik'
+

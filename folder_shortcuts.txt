@@ -5,13 +5,14 @@
 # tabs in vim mit tabexpand: CTRL-V <TAB> (im insert-mode)!
 # TODO: Leerzeichen in Verzeichnisnamen escapen!
 h	~
-vi	~/Videos
+vd	~/Videos
 ve	~/Videos/EigeneVideos
 bi	~/Bilder
 bf	~/Bilder/fotos
 bs	~/Bilder/screenshots
 bw	~/Bilder/wallpapers
-do	~/Dokumente
+dok	~/Dokumente
+# DON'T USE "do" as an alias!!!!! It will break things!!!! :)
 ddm	~/Dokumente/musik/Depeche Mode
 dmm	~/Dokumente/musik/MothersMilk
 de	~/Dokumente/musik/eigene_transkriptionen
