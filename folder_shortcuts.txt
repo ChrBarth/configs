@@ -17,6 +17,7 @@ ddm	~/Dokumente/musik/Depeche Mode
 dmm	~/Dokumente/musik/MothersMilk
 de	~/Dokumente/musik/eigene_transkriptionen
 dov	~/Dokumente/vorlagen
+dco	~/Dokumente/comp
 sr	~/src
 sgg	~/src/git
 sgc	~/src/git/configs
