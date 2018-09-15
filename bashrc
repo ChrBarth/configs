@@ -69,12 +69,16 @@ alias devmap='q3start.sh +exec c_schoen.cfg +set sv_pure 0 +devmap'
 alias qw='~/Spiele/nquake/ezquake-linux-x86_64'
 alias qtv='~/Spiele/nquake/ezquake-linux-x86_64 +qwurl'
 alias fs="cat ~/.config/folder_shortcuts.txt | awk 'BEGIN { FS=\"\t\" } /^[^#]/ { printf(\"%5s -> %s\n\", \$1,\$2) }'"
+alias newlatex='cat ~/.vim/templates/latex.tex | vim -c "set syntax=tex" -'
+alias newlilytab='cat ~/.vim/templates/lilypond_tab.ly | vim -c "set syntax=lilypond" -'
+alias newpython='cat ~/.vim/templates/python.py | vim -c "set syntax=python" -'
 # disable screensaver and energy saving for watching videos etc.:
 alias vidmode='xset -dpms s off'
 # restore screensaver and energy saving settings:
 alias novidmode='xset +dpms s on'
 # fun stuff:
 alias rot13='tr A-Za-z N-ZA-Mn-za-m'
+alias loldate='toilet -t -f ~/files/fonts/figlet/slant.flf $(date) | lolcat'
 # tmux stuff:
 # htop in the lower half of the screen, alsamixer in the top left and .xsession-errors in the top right:
 alias sysmon='tmux split-window "htop" \; split-window -h "tail -f ~/.xsession-errors"; alsamixer'
@@ -116,23 +120,4 @@ set -o vi
 
 
 # folder aliases:
-alias h='cd ~'
-alias vd='cd ~/Videos'
-alias ve='cd ~/Videos/EigeneVideos'
-alias bi='cd ~/Bilder'
-alias bf='cd ~/Bilder/fotos'
-alias bs='cd ~/Bilder/screenshots'
-alias bw='cd ~/Bilder/wallpapers'
-alias dok='cd ~/Dokumente'
-alias ddm='cd ~/Dokumente/musik/Depeche\ Mode'
-alias dmm='cd ~/Dokumente/musik/MothersMilk'
-alias de='cd ~/Dokumente/musik/eigene_transkriptionen'
-alias sr='cd ~/src'
-alias sgg='cd ~/src/git'
-alias sgc='cd ~/src/git/configs'
-alias sgi='cd ~/src/git/i3wm-configs'
-alias sp='cd ~/src/python'
-alias St='cd ~/Studio'
-alias Sr='cd ~/Studio/riffs'
-alias m='cd ~/Musik'
 

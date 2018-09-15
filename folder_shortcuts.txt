@@ -16,6 +16,7 @@ dok	~/Dokumente
 ddm	~/Dokumente/musik/Depeche Mode
 dmm	~/Dokumente/musik/MothersMilk
 de	~/Dokumente/musik/eigene_transkriptionen
+dov	~/Dokumente/vorlagen
 sr	~/src
 sgg	~/src/git
 sgc	~/src/git/configs
@@ -24,3 +25,4 @@ sp	~/src/python
 St	~/Studio
 Sr	~/Studio/riffs
 m	~/Musik
+dn	~/Downloads
