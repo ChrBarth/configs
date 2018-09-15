@@ -5,8 +5,6 @@
 SHORTCUTSFILE="${HOME}/.config/folder_shortcuts.txt"
 BASHRC_BASE="${HOME}/.config/bashrc_base"
 RANGER_BASE="${HOME}/.config/ranger_base.conf"
-TMP_BASHRC="${HOME}/bash_aliases.tmp"
-TMP_RANGERMAPPINGS="${HOME}/ranger_mappings.tmp"
 
 # first, check if source files exist:
 if [ ! -f $SHORTCUTSFILE ]
@@ -23,8 +21,8 @@ then
     exit 1
 fi
 
-echo -e "\n# folder mappings:" > $TMP_RANGERMAPPINGS
-echo -e "\n# folder aliases:" > $TMP_BASHRC
+echo -e "\n# folder mappings:" > ranger_mappings.tmp
+echo -e "\n# folder aliases:" > bash_aliases.tmp
 
 # parse SHORTCUTSFILE and create temporary config files:
 # using <(cat... so we can use single-quotes in aliases for .bashrc:
@@ -46,10 +44,10 @@ then
 fi
 
 # create ~/.bashrc
-cat $BASHRC_BASE $TMP_BASHRC > ${HOME}/.bashrc
+cat $BASHRC_BASE bash_aliases.tmp > ${HOME}/.bashrc
 echo "" >> ${HOME}/.bashrc
 # create /.config/ranger/rc.conf
-cat $RANGER_BASE $TMP_RANGERMAPPINGS > ${HOME}/.config/ranger/rc.conf
+cat $RANGER_BASE ranger_mappings.tmp > ${HOME}/.config/ranger/rc.conf
 
-rm $TMP_BASHRC
-rm $TMP_RANGERMAPPINGS
+rm ranger_mappings.tmp
+rm bash_aliases.tmp

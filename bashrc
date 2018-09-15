@@ -120,4 +120,25 @@ set -o vi
 
 
 # folder aliases:
+alias h='cd ~'
+alias vd='cd ~/Videos'
+alias ve='cd ~/Videos/EigeneVideos'
+alias bi='cd ~/Bilder'
+alias bf='cd ~/Bilder/fotos'
+alias bs='cd ~/Bilder/screenshots'
+alias bw='cd ~/Bilder/wallpapers'
+alias dok='cd ~/Dokumente'
+alias ddm='cd ~/Dokumente/musik/Depeche\ Mode'
+alias dmm='cd ~/Dokumente/musik/MothersMilk'
+alias de='cd ~/Dokumente/musik/eigene_transkriptionen'
+alias dov='cd ~/Dokumente/vorlagen'
+alias sr='cd ~/src'
+alias sgg='cd ~/src/git'
+alias sgc='cd ~/src/git/configs'
+alias sgi='cd ~/src/git/i3wm-configs'
+alias sp='cd ~/src/python'
+alias St='cd ~/Studio'
+alias Sr='cd ~/Studio/riffs'
+alias m='cd ~/Musik'
+alias dn='cd ~/Downloads'
 
