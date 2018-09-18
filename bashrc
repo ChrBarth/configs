@@ -59,6 +59,8 @@ alias xcopy='xclip -in -selection clipboard'
 alias xm='xrdb -merge ~/.Xresources'
 alias reconfig='build_configs.sh && . ~/.bashrc'
 alias xlog='journalctl -u session-${XDG_SESSION_ID}.scope'
+# print a nice list of all available aliases:
+alias al='alias | sed "s/\x27//g; s/alias \([^=]\+\)=\(.\)/\1\t\2/" | awk "BEGIN {FS=\"\t\"} { printf(\"%-15s %s\n\", \$1, substr(\$2,0,64)) }"'
 # games:
 alias cpma='q3start.sh +set fs_game cpma +exec c_cpma.cfg'
 alias ctf='cpma +exec c_ctf.cfg'
