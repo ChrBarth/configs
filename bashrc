@@ -81,7 +81,7 @@ alias vidmode='xset -dpms s off'
 alias novidmode='xset +dpms s on'
 # fun stuff:
 alias rot13='tr A-Za-z N-ZA-Mn-za-m'
-alias loldate='toilet -t -f ~/files/fonts/figlet/slant.flf $(date) | lolcat'
+alias loldate='toilet -t -d ~/files/fonts/figlet/ -f slant $(date) | lolcat'
 # tmux stuff:
 # htop in the lower half of the screen, alsamixer in the top left and .xsession-errors in the top right:
 alias sysmon='tmux split-window "htop" \; split-window -h "tail -f ~/.xsession-errors"; alsamixer'
