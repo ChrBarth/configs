@@ -41,6 +41,7 @@ alias cls='tput clear'
 alias du='du -h'
 alias df='df -h'
 alias please='sudo $(history -p !!)'
+alias fcd='cd "$(find . -mindepth 1 -type d | fzy)"'
 alias v='vim'
 alias i3c='v ~/.config/i3/config'
 alias vrc='v ~/.vimrc'
@@ -54,6 +55,8 @@ alias wetter='python3 ~/src/python/wetter/wetter.py'
 alias update='sudo apt --yes update && sudo apt --yes upgrade'
 alias ssh_on='sudo systemctl start ssh.service'
 alias ssh_off='sudo systemctl stop ssh.service'
+alias apache_on='sudo systemctl start apache2'
+alias apache_off='sudo systemctl stop apache2'
 alias xpaste='xclip -out -selection clipboard'
 alias xcopy='xclip -in -selection clipboard'
 alias xm='xrdb -merge ~/.Xresources'
@@ -120,7 +123,8 @@ fi
 
 # enable vi-mode:
 set -o vi
-
+# auto-cd if only directory name is entered:
+shopt -s autocd
 
 # folder aliases:
 alias h='cd ~'
