@@ -36,7 +36,6 @@ alias l='ls --color=auto'
 alias l.='ls -ld .*'
 alias ll='ls -lhG --color=auto'
 alias lsn='ls --color=none'
-alias lo='ls -lonth'
 alias cls='tput clear'
 alias du='du -h'
 alias df='df -h'
@@ -71,7 +70,6 @@ alias tdm='cpma +exec c_tdm.cfg'
 alias 1v1='cpma +exec c_1v1.cfg'
 alias ffa='cpma +exec c_ffa.cfg'
 alias iffa='cpma +exec c_iffa.cfg'
-alias devmap='q3start.sh +exec c_schoen.cfg +set sv_pure 0 +devmap'
 alias qw='~/Spiele/nquake/ezquake-linux-x86_64'
 alias qtv='~/Spiele/nquake/ezquake-linux-x86_64 +qwurl'
 alias fs="cat ~/.config/folder_shortcuts.txt | awk 'BEGIN { FS=\"\t\" } /^[^#]/ { printf(\"%5s -> %s\n\", \$1,\$2) }'"
@@ -88,9 +86,6 @@ alias loldate='toilet -t -d ~/files/fonts/figlet/ -f slant $(date) | lolcat'
 # tmux stuff:
 # htop in the lower half of the screen, alsamixer in the top left and .xsession-errors in the top right:
 alias sysmon='tmux split-window "htop" \; split-window -h "tail -f ~/.xsession-errors"; alsamixer'
-
-# smartphone stuff (adb)
-alias battery='adb shell dumpsys batterymanager | grep level'
 
 # webcam stuff:
 # displays the webcams output using mplayer:
