@@ -37,10 +37,11 @@ no <down> ddp
 no <left> <Nop>
 no <right> <Nop>
 no <up> ddkP
-ino <down> <Nop>
-ino <up> <Nop>
-ino <left> <Nop>
-ino <right> <Nop>
+"don't disable in insert mode (guitar tabs are too hard otherwise)
+"ino <down> <Nop>
+"ino <up> <Nop>
+"ino <left> <Nop>
+"ino <right> <Nop>
 vno <down> <Nop>
 vno <up> <Nop>
 vno <left> <Nop>
@@ -85,7 +86,8 @@ nnoremap <c-a> ggVG
 vnoremap <Leader>C "+y
 nnoremap <Leader>V "+p
 vnoremap <Leader>X "+x
-
+" F5 in insert-Mode: insert date+time:
+inoremap <F5> <C-R>=strftime("%c")<CR>
 " }}}
 
 " StatusLine stuff: {{{
