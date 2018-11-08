@@ -32,11 +32,13 @@ set foldmethod=marker
 
 " key mappings: {{{
 " from https://www.youtube.com/watch?v=2pqipq-UEwQ:
-" (disable arrow keys, up and down move line up/down)
-no <down> ddp
+" (disable arrow keys, leader+up and down move line up/down)
+no <Leader><down> ddp
+no <Leader><up> ddkP
 no <left> <Nop>
+no <down> <Nop>
 no <right> <Nop>
-no <up> ddkP
+no <up> <Nop>
 "don't disable in insert mode (guitar tabs are too hard otherwise)
 "ino <down> <Nop>
 "ino <up> <Nop>
