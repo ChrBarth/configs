@@ -63,12 +63,14 @@ vnoremap <Leader>' <Esc>`<i'<Esc>`>la'
 vnoremap <Leader>( <Esc>`<i(<Esc>`>la)
 vnoremap <Leader>[ <Esc>`<i[<Esc>`>la]
 vnoremap <Leader>{ <Esc>`<i{<Esc>`>la}
+vnoremap <Leader>` <Esc>`<i`<Esc>`>la`
 " same mappings for visual line mode (V):
 vnoremap <Leader>"" <Esc>`<i"<Esc>`>a"
 vnoremap <Leader>'' <Esc>`<i'<Esc>`>a'
 vnoremap <Leader>(( <Esc>`<i(<Esc>`>a)
 vnoremap <Leader>[[ <Esc>`<i[<Esc>`>a]
 vnoremap <Leader>{{ <Esc>`<i{<Esc>`>a}
+vnoremap <Leader>`` <Esc>`<i`<Esc>`>la`
 " guitar-tab-shortcut: --
 nnoremap -- :normal! i-<Esc>vy79pVy5p4jo<CR><CR><Esc>
 " Taktstriche: II (fügt einen Taktstrich ein, Cursor muss sich auf oberster Tab-Linie befinden)
