@@ -22,6 +22,7 @@ sr	~/src
 sgg	~/src/git
 sgc	~/src/git/configs
 sgi	~/src/git/i3wm-configs
+sgh	~/src/git/cheatsheets
 sp	~/src/python
 St	~/Studio
 Sr	~/Studio/riffs

@@ -92,6 +92,8 @@ nnoremap <Leader>V "+p
 vnoremap <Leader>X "+x
 " F5 in insert-Mode: insert date+time:
 inoremap <F5> <C-R>=strftime("%c")<CR>
+" open file browser on the left side
+nnoremap <F12> :leftabove vnew<CR><Esc>:Explore<CR><Esc>:vertical resize 40<CR>
 " }}}
 
 " StatusLine stuff: {{{
