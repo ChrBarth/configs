@@ -69,6 +69,7 @@ alias al='alias | sed "s/\x27//g; s/alias \([^=]\+\)=\(.\)/\1\t\2/" | awk "BEGIN
 # games:
 alias cpma='q3start.sh +set fs_game cpma +exec c_cpma.cfg'
 alias ctf='cpma +exec c_ctf.cfg'
+alias ictf='cpma +exec c_ictf.cfg'
 alias tdm='cpma +exec c_tdm.cfg'
 alias 1v1='cpma +exec c_1v1.cfg'
 alias ffa='cpma +exec c_ffa.cfg'
@@ -79,6 +80,7 @@ alias fs="cat ~/.config/folder_shortcuts.txt | awk 'BEGIN { FS=\"\t\" } /^[^#]/ 
 alias newlatex='cat ~/.vim/templates/latex.tex | vim -c "set syntax=tex" -'
 alias newlilytab='cat ~/.vim/templates/lilypond_tab.ly | vim -c "set syntax=lilypond" -'
 alias newpython='cat ~/.vim/templates/python.py | vim -c "set syntax=python" -'
+alias newc='cat ~/.vim/templates/cprog.c | vim -c "set syntax=c" -'
 # disable screensaver and energy saving for watching videos etc.:
 alias vidmode='xset -dpms s off'
 # restore screensaver and energy saving settings:
@@ -101,6 +103,12 @@ alias screencast='ffmpeg -hide_banner -video_size 1920x1080 -framerate 30 -f x11
 alias screencast_alsa='ffmpeg -hide_banner -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0 -f alsa -ac 2 -i default -vcodec libx264 -acodec flac ~/Videos/Screencasts/screencast$(date +"%Y-%m-%d_%H%M%S").mkv'
 alias screencast_mute='ffmpeg -hide_banner -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0 -vcodec libx264 ~/Videos/Screencasts/screencast$(date +"%Y-%m-%d_%H%M%S").mkv'
 
+# rip a song from a cd to mp3:
+# 1st argument is the track no., 2nd is the filename of the mp3-file
+function ripsong {
+    icedax -t $1 -D /dev/cdrom - | lame --abr 256 - $2
+}
+
 #PROMPT_COMMAND='echo -ne "\033]0; ::xterm:: \007"'
 
 PATH="$PATH:$HOME/bin:$HOME/.local/bin"
@@ -118,6 +126,10 @@ if ! shopt -oq posix; then
        . /etc/bash_completion
   fi
 fi
+
+# for gpg-agent (man gpg-agent):
+GPG_TTY=$(tty)
+export GPG_TTY
 
 # enable vi-mode:
 set -o vi
