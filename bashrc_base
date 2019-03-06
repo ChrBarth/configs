@@ -64,6 +64,7 @@ alias xcopy='xclip -in -selection clipboard'
 alias xm='xrdb -merge ~/.Xresources'
 alias reconfig='build_configs.sh && . ~/.bashrc'
 alias xlog='journalctl -u session-${XDG_SESSION_ID}.scope'
+alias dlna='minidlnad -f ~/.config/minidlna.conf -P ~/temp/minidlna_pid'
 # print a nice list of all available aliases:
 alias al='alias | sed "s/\x27//g; s/alias \([^=]\+\)=\(.\)/\1\t\2/" | awk "BEGIN {FS=\"\t\"} { printf(\"%-15s %s\n\", \$1, substr(\$2,0,64)) }"'
 # games:
@@ -134,4 +135,4 @@ export GPG_TTY
 # enable vi-mode:
 set -o vi
 # auto-cd if only directory name is entered:
-shopt -s autocd
+shopt -s autocd histverify
