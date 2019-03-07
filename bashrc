@@ -160,6 +160,7 @@ alias sp='cd ~/src/python'
 alias St='cd ~/Studio'
 alias Sr='cd ~/Studio/riffs'
 alias m='cd ~/Musik'
+alias M='cd ~/media/'
 alias dn='cd ~/Downloads'
 alias don='cd ~/Dokumente/Notizen'
 

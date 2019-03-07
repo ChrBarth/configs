@@ -27,5 +27,6 @@ sp	~/src/python
 St	~/Studio
 Sr	~/Studio/riffs
 m	~/Musik
+M	~/media/
 dn	~/Downloads
 don	~/Dokumente/Notizen
