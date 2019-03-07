@@ -26,6 +26,7 @@ set number relativenumber
 set wildmenu
 set hlsearch
 set incsearch
+set path+=**
 "folding:
 set foldmethod=marker
 " }}}
