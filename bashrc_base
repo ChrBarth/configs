@@ -104,6 +104,15 @@ alias screencast='ffmpeg -hide_banner -video_size 1920x1080 -framerate 30 -f x11
 alias screencast_alsa='ffmpeg -hide_banner -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0 -f alsa -ac 2 -i default -vcodec libx264 -acodec flac ~/Videos/Screencasts/screencast$(date +"%Y-%m-%d_%H%M%S").mkv'
 alias screencast_mute='ffmpeg -hide_banner -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0 -vcodec libx264 ~/Videos/Screencasts/screencast$(date +"%Y-%m-%d_%H%M%S").mkv'
 
+# start a metronome on the commandline (jack)
+function metro {
+    jack_metro -f 600 -D 50 -d 20 --bpm $1 & 
+    jack_connect metro:${1}_bpm system:playback_1
+    jack_connect metro:${1}_bpm system:playback_2
+    echo "Metronome ($1 bpm) started!"
+    echo "(killall jack_metro to stop)"
+}
+
 # rip a song from a cd to mp3:
 # 1st argument is the track no., 2nd is the filename of the mp3-file
 function ripsong {
