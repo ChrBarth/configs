@@ -132,6 +132,7 @@ augroup php_html
     au FileType php,html inoremap <leader>tr <tr></tr><Esc>FtT>i
     au FileType php,html inoremap <leader>td <td></td><Esc>FtT>i
     au FileType php inoremap <leader>c <Esc>I/*  */<Esc>hhi
+    au FileType php vnoremap <leader>c I//<Esc>
     au FileType php inoremap <leader>php <?php  ?><Esc>Tpi
 augroup END
 

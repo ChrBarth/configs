@@ -110,7 +110,9 @@ function metro {
     jack_connect metro:${1}_bpm system:playback_1
     jack_connect metro:${1}_bpm system:playback_2
     echo "Metronome ($1 bpm) started!"
+    echo "(killall jack_metro to stop)"
 }
+
 # rip a song from a cd to mp3:
 # 1st argument is the track no., 2nd is the filename of the mp3-file
 function ripsong {
