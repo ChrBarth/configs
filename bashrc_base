@@ -41,7 +41,10 @@ alias cls='tput clear'
 alias du='du -h'
 alias df='df -h'
 alias please='sudo $(history -p !!)'
-alias fcd='cd "$(find . -maxdepth 1 -type d | fzy -l 25)"'
+# easier to create a separate alias than to escape everything in the fcd alias below:
+# the regex makes shure that hidden directories are ignored
+alias findnohidden='find . -type d -regextype posix-extended -regex "\.(\/[^\.]+)*" 2>/dev/null'
+alias fcd='cd "$(findnohidden | fzy -l 20 -p cd\ )"'
 alias fhist='$(cat $HISTFILE | fzy -l 25)'
 alias v='vim'
 alias i3c='v ~/.config/i3/config'
