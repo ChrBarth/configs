@@ -85,6 +85,7 @@ alias newlatex='cat ~/.vim/templates/latex.tex | vim -c "set syntax=tex" -'
 alias newlilytab='cat ~/.vim/templates/lilypond_tab.ly | vim -c "set syntax=lilypond" -'
 alias newpython='cat ~/.vim/templates/python.py | vim -c "set syntax=python" -'
 alias newc='cat ~/.vim/templates/cprog.c | vim -c "set syntax=c" -'
+alias latexclean='rm -i *.aux *.log *.out'
 # disable screensaver and energy saving for watching videos etc.:
 alias vidmode='xset -dpms s off'
 # restore screensaver and energy saving settings:
