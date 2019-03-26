@@ -86,6 +86,7 @@ alias newlilytab='cat ~/.vim/templates/lilypond_tab.ly | vim -c "set syntax=lily
 alias newpython='cat ~/.vim/templates/python.py | vim -c "set syntax=python" -'
 alias newc='cat ~/.vim/templates/cprog.c | vim -c "set syntax=c" -'
 alias latexclean='rm -i *.aux *.log *.out'
+alias cheats='find ~/src/git/cheatsheets/pdf/ -type f | rofi -dmenu | xargs -r evince'
 # disable screensaver and energy saving for watching videos etc.:
 alias vidmode='xset -dpms s off'
 # restore screensaver and energy saving settings:
