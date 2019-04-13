@@ -96,7 +96,7 @@ alias rot13='tr A-Za-z N-ZA-Mn-za-m'
 alias loldate='toilet -t -d ~/files/fonts/figlet/ -f slant $(date) | lolcat'
 # tmux stuff:
 # htop in the lower half of the screen, alsamixer in the top left and .xsession-errors in the top right:
-alias sysmon='tmux split-window "htop" \; split-window -h "tail -f ~/.xsession-errors"; alsamixer'
+alias sysmon='tmux split-window -h "htop" \; split-window -f journalctl -u session-${XDG_SESSION_ID}.scope \; select-pane -t 0 && alsamixer'
 
 # webcam stuff:
 # displays the webcams output using mplayer:
@@ -122,6 +122,11 @@ function metro {
 # 1st argument is the track no., 2nd is the filename of the mp3-file
 function ripsong {
     icedax -t $1 -D /dev/cdrom - | lame --abr 256 - $2
+}
+
+# create some windows in tmux for python development:
+function pydev {
+    tmux split-window -h \; split-window "python3" && tmux select-pane -t 0 && vim $@
 }
 
 #PROMPT_COMMAND='echo -ne "\033]0; ::xterm:: \007"'

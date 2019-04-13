@@ -54,10 +54,10 @@ nnoremap <Leader>sw bvelxel"-p
 nnoremap <Leader>sW BvElxEl"-p
 nnoremap / /\v
 inoremap jk <Esc>
-inoremap <Leader>' ''<Esc>i
-inoremap <Leader>" ""<Esc>i
-inoremap <Leader>( ()<Esc>i
-inoremap <Leader>[ []<Esc>i
+nnoremap <Leader>' ''<Esc>i
+nnoremap <Leader>" ""<Esc>i
+nnoremap <Leader>( ()<Esc>i
+nnoremap <Leader>[ []<Esc>i
 " put quotes/brackets/... around selection:
 vnoremap <Leader>" <Esc>`<i"<Esc>`>la"
 vnoremap <Leader>' <Esc>`<i'<Esc>`>la'
