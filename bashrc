@@ -129,6 +129,11 @@ function pydev {
     tmux split-window -h \; split-window "python3" && tmux select-pane -t 0 && vim $@
 }
 
+function cut_video { 
+    # cut_video [start-time-> format hh:mm:ss] [duration->format hh:mm:ss] [original filename] [new filename]
+    ffmpeg -ss $1 -i $3 -t $2 -acodec copy -vcodec copy $4
+}
+
 #PROMPT_COMMAND='echo -ne "\033]0; ::xterm:: \007"'
 
 PATH="$PATH:$HOME/bin:$HOME/.local/bin"
