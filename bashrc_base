@@ -97,6 +97,9 @@ alias loldate='toilet -t -d ~/files/fonts/figlet/ -f slant $(date) | lolcat'
 # tmux stuff:
 # htop in the lower half of the screen, alsamixer in the top left and .xsession-errors in the top right:
 alias sysmon='tmux split-window -h "htop" \; split-window -f journalctl -u session-${XDG_SESSION_ID}.scope \; select-pane -t 0 && alsamixer'
+# powersave:
+alias cpulow='sudo cpufreqd-set manual && sudo cpufreqd-set 3'
+alias cpuhigh='sudo cpufreqd-set dynamic'
 
 # webcam stuff:
 # displays the webcams output using mplayer:
