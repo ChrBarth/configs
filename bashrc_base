@@ -78,6 +78,7 @@ alias tdm='cpma +exec c_tdm.cfg'
 alias 1v1='cpma +exec c_1v1.cfg'
 alias ffa='cpma +exec c_ffa.cfg'
 alias iffa='cpma +exec c_iffa.cfg'
+alias q3df='q3start.sh +set fs_game defrag'
 alias qw='~/Spiele/nquake/ezquake-linux-x86_64'
 alias qtv='~/Spiele/nquake/ezquake-linux-x86_64 +qwurl'
 alias fs="cat ~/.config/folder_shortcuts.txt | awk 'BEGIN { FS=\"\t\" } /^[^#]/ { printf(\"%5s -> %s\n\", \$1,\$2) }'"
@@ -111,6 +112,7 @@ alias recordcam='ffmpeg -v 0 -hide_banner -f video4linux2 -s 1920x1080 -i /dev/v
 alias screencast='ffmpeg -hide_banner -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0 -f pulse -ac 2 -i default -vcodec libx264 -acodec flac ~/Videos/Screencasts/screencast$(date +"%Y-%m-%d_%H%M%S").mkv'
 alias screencast_alsa='ffmpeg -hide_banner -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0 -f alsa -ac 2 -i default -vcodec libx264 -acodec flac ~/Videos/Screencasts/screencast$(date +"%Y-%m-%d_%H%M%S").mkv'
 alias screencast_mute='ffmpeg -hide_banner -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0 -vcodec libx264 ~/Videos/Screencasts/screencast$(date +"%Y-%m-%d_%H%M%S").mkv'
+alias screencast_timelapse='ffmpeg -hide_banner -video_size 1920x1080 -framerate 5 -f x11grab -i :0.0 -vcodec libx264 ~/Videos/Screencasts/screencast$(date +"%Y-%m-%d_%H%M%S").mkv'
 
 # start a metronome on the commandline (jack)
 function metro {

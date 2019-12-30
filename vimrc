@@ -9,6 +9,7 @@ filetype on
 
 syntax enable
 set autoindent
+set breakindent
 colo desert
 let mapleader = ","
 
