@@ -101,6 +101,7 @@ alias sysmon='tmux split-window -h "htop" \; split-window -f journalctl -u sessi
 # powersave:
 alias cpulow='sudo cpufreqd-set manual && sudo cpufreqd-set 3'
 alias cpuhigh='sudo cpufreqd-set dynamic'
+alias myip="ip -o -4 a | awk '/enp/ { split(\$4, a, \"/\"); print a[1] }'"
 
 # webcam stuff:
 # displays the webcams output using mplayer:
