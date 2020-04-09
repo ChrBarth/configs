@@ -137,14 +137,25 @@ function pydev {
 
 function cut_video { 
     # cut_video [start-time-> format hh:mm:ss] [duration->format hh:mm:ss] [original filename] [new filename]
-    ffmpeg -ss $1 -i $3 -t $2 -acodec copy -vcodec copy $4
+    if [ $# -ne 4 ]
+    then
+        echo "usage: cut_video [start] [duration] [inputfile] [outputfile]"
+        echo "start/duration format: hh:mm:ss"
+    else
+        ffmpeg -ss $1 -i $3 -t $2 -acodec copy -vcodec copy $4
+    fi
 }
+
+function doom2 {
+    gzdoom $@ -iwad DOOM2.WAD
+    }
 
 #PROMPT_COMMAND='echo -ne "\033]0; ::xterm:: \007"'
 
 PATH="$PATH:$HOME/bin:$HOME/.local/bin"
 PAGER="less"
 EDITOR="vim"
+export DOOMWADDIR="$HOME/Spiele/odamex:$HOME/.config/gzdoom:$HOME/Spiele/wads"
 
 export HISTIGNORE="clear:history:cls"
 export HISTCONTROL="ignoreboth"
