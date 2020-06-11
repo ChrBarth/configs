@@ -117,17 +117,33 @@ alias screencast_timelapse='ffmpeg -hide_banner -video_size 1920x1080 -framerate
 
 # start a metronome on the commandline (jack)
 function metro {
-    jack_metro -f 600 -D 50 -d 20 --bpm $1 & 
-    jack_connect metro:${1}_bpm system:playback_1
-    jack_connect metro:${1}_bpm system:playback_2
-    echo "Metronome ($1 bpm) started!"
-    echo "(killall jack_metro to stop)"
+    if [ $# -ne 1 ]
+    then
+        echo "usage: metro [bpm/stop]"
+    else
+        if [ $1 == "stop" ]
+        then
+            killall jack_metro 
+            echo "metronome stopped"
+        else
+            jack_metro -f 600 -D 50 -d 20 --bpm $1 &
+            jack_connect metro:${1}_bpm system:playback_1
+            jack_connect metro:${1}_bpm system:playback_2
+            echo "Metronome ($1 bpm) started!"
+            echo "(killall jack_metro to stop)"
+        fi
+    fi
 }
 
 # rip a song from a cd to mp3:
 # 1st argument is the track no., 2nd is the filename of the mp3-file
 function ripsong {
-    icedax -t $1 -D /dev/cdrom - | lame --abr 256 - $2
+    if [ $# -ne 2 ]
+    then
+        echo "usage: ripsong [trackno] [outfile]"
+    else
+        icedax -t $1 -D /dev/cdrom - | lame --abr 256 - $2
+    fi
 }
 
 # create some windows in tmux for python development:

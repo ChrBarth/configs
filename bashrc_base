@@ -117,11 +117,22 @@ alias screencast_timelapse='ffmpeg -hide_banner -video_size 1920x1080 -framerate
 
 # start a metronome on the commandline (jack)
 function metro {
-    jack_metro -f 600 -D 50 -d 20 --bpm $1 & 
-    jack_connect metro:${1}_bpm system:playback_1
-    jack_connect metro:${1}_bpm system:playback_2
-    echo "Metronome ($1 bpm) started!"
-    echo "(killall jack_metro to stop)"
+    if [ $# -ne 1 ]
+    then
+        echo "usage: metro [bpm/stop]"
+    else
+        if [ $1 == "stop" ]
+        then
+            killall jack_metro 
+            echo "metronome stopped"
+        else
+            jack_metro -f 600 -D 50 -d 20 --bpm $1 &
+            jack_connect metro:${1}_bpm system:playback_1
+            jack_connect metro:${1}_bpm system:playback_2
+            echo "Metronome ($1 bpm) started!"
+            echo "(killall jack_metro to stop)"
+        fi
+    fi
 }
 
 # rip a song from a cd to mp3:
