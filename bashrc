@@ -173,7 +173,7 @@ PAGER="less"
 EDITOR="vim"
 export DOOMWADDIR="$HOME/Spiele/odamex:$HOME/.config/gzdoom:$HOME/Spiele/wads"
 
-export HISTIGNORE="clear:history:cls"
+export HISTIGNORE="clear:history:cls:i3c:brc:vrc:poweroff"
 export HISTCONTROL="ignoreboth"
 
 # enable bash completion in interactive shells
