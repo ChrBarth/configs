@@ -194,6 +194,9 @@ set -o vi
 # auto-cd if only directory name is entered:
 shopt -s autocd histverify
 
+# fzf:
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 # folder aliases:
 alias h='cd ~'
 alias vd='cd ~/Videos'

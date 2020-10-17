@@ -19,6 +19,7 @@ UXTerm*geometry:	132x40
 #define fontfamily Inconsolata
 #define fontsize 20
 #define fontsizelarge 22
+#define fontfamily2 Comic Shanns Regular
 *Rxvt.letterSpace: -1
 *Rxvt.lineSpace: -1
 !increase spacing between characters so some 
@@ -37,9 +38,9 @@ UXTerm*geometry:	132x40
 *Rxvt.perl-ext-common: default,font-size
 *Rxvt*saveLines: 8192
 
-flurxvt.font:       xft:fontfamily:pixelsize=fontsizelarge
-flurxvt.boldFont:   xft:fontfamily:pixelsize=fontsizelarge:bold
-flurxvt.italicFont: xft:fontfamily:pixelsize=fontsizelarge:italic
+flurxvt.font:       xft:fontfamily2:pixelsize=fontsizelarge
+flurxvt.boldFont:   xft:fontfamily2:pixelsize=fontsizelarge:bold
+flurxvt.italicFont: xft:fontfamily2:pixelsize=fontsizelarge:italic
 flurxvt.shading:    10
 flurxvt.fading:     15
 flurxvt.fadeColor:  #101010
