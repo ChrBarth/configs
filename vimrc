@@ -86,6 +86,8 @@ nnoremap <leader>rrc :tabnew<CR>:edit ~/.config/ranger_base.conf<CR>
 nnoremap <leader>xr :tabnew<CR>:edit ~/.Xresources<CR>
 nnoremap <leader>fs :tabnew<CR>:edit ~/.config/folder_shortcuts.txt<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR><CR>
+nnoremap <leader>vc :tabnew<CR>:edit ~/src/git/cheatsheets/vim-cheatsheet.md<CR>
+nnoremap <leader>n :tabnew<CR>:Explore ~/Dokumente/Notizen<CR>
 nnoremap <Leader><Space> viw
 nnoremap <Leader><Space><Space> viW
 nnoremap <c-a> ggVG
