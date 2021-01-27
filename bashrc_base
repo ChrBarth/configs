@@ -63,6 +63,8 @@ alias ssh_on='sudo systemctl start ssh.service'
 alias ssh_off='sudo systemctl stop ssh.service'
 alias apache_on='sudo systemctl start apache2'
 alias apache_off='sudo systemctl stop apache2'
+alias ircon='sudo systemctl start ngircd.service'
+alias ircoff='sudo systemctl stop ngircd.service'
 alias xpaste='xclip -out -selection clipboard'
 alias xcopy='xclip -in -selection clipboard'
 alias xm='xrdb -merge ~/.Xresources'
@@ -82,6 +84,8 @@ alias iffa='cpma +exec c_iffa.cfg'
 alias q3df='q3start.sh +set fs_game defrag'
 alias qw='~/Spiele/nquake/ezquake-linux-x86_64'
 alias qtv='~/Spiele/nquake/ezquake-linux-x86_64 +qwurl'
+alias odadm='odasrv -config ~/.odamex/odasrv_deathmatch.cfg'
+alias odacoop='odasrv -config ~/.odamex/odasrv_coop.cfg -skill 4'
 alias fs="cat ~/.config/folder_shortcuts.txt | awk 'BEGIN { FS=\"\t\" } /^[^#]/ { printf(\"%5s -> %s\n\", \$1,\$2) }'"
 alias newlatex='cat ~/.vim/templates/latex.tex | vim -c "set syntax=tex" -'
 alias newlilytab='cat ~/.vim/templates/lilypond_tab.ly | vim -c "set syntax=lilypond" -'
@@ -172,7 +176,7 @@ function doom2 {
 PATH="$PATH:$HOME/bin:$HOME/.local/bin"
 PAGER="less"
 EDITOR="vim"
-export DOOMWADDIR="$HOME/Spiele/odamex:$HOME/.config/gzdoom:$HOME/Spiele/wads"
+export DOOMWADDIR="$HOME/Spiele/odamex:$HOME/.config/gzdoom:$HOME/Spiele/wads:$HOME/Spiele/wads/eigene"
 
 export HISTIGNORE="clear:history:cls:i3c:brc:vrc:poweroff"
 export HISTCONTROL="ignoreboth"
