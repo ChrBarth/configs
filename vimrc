@@ -23,7 +23,10 @@ set shiftwidth=4
 set linespace=2
 "set number
 set number relativenumber
-"set cursorline
+" highlight the current line
+set cursorline
+set cursorlineopt=line
+
 set wildmenu
 set hlsearch
 set incsearch
@@ -94,6 +97,7 @@ nnoremap <c-a> ggVG
 vnoremap <Leader>C "+y
 nnoremap <Leader>V "+p
 vnoremap <Leader>X "+x
+nnoremap <Leader>h :nohlsearch<CR>
 " F5 in insert-Mode: insert date+time:
 inoremap <F5> <C-R>=strftime("%c")<CR>
 " open file browser on the left side
@@ -103,12 +107,16 @@ nnoremap <F11> <Esc>:Explore<CR>
 
 " StatusLine stuff: {{{
 " change Color of StatusLine when inserting/replacing:
-au InsertEnter * hi StatusLine ctermfg=Magenta ctermbg=White
-au InsertLeave * hi StatusLine ctermfg=LightYellow ctermbg=Black
+hi TabLineSel ctermfg=7 ctermbg=0
+hi TabLine ctermfg=15 ctermbg=10
+hi TabLineFill ctermfg=10 ctermbg=15
+
+au InsertEnter * hi StatusLine ctermfg=200 ctermbg=15
+au InsertLeave * hi StatusLine ctermfg=23 ctermbg=15
 
 " default color of StatusLine:
-hi StatusLineNC ctermfg=Darkgrey ctermbg=Black
-hi StatusLine ctermfg=LightYellow ctermbg=Black
+hi StatusLineNC ctermfg=10 ctermbg=15
+hi StatusLine ctermfg=23 ctermbg=15
 
 " StatusLine format:
 set statusline=%<%f\ [%{strlen(&fenc)?&fenc:'none'}]\ %h%m%r%=%-14.(%l,%c%V%)\ %P
