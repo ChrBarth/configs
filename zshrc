@@ -38,7 +38,7 @@ alias du='du -h'
 alias df='df -h'
 alias i3c='v ~/.config/i3/config'
 alias vrc='v ~/.vimrc'
-alias brc='v ~/.config/bashrc_base'
+alias zrc='v ~/.zshrc'
 alias rrc='v ~/.config/ranger_base.conf'
 alias vfs='v ~/.config/folder_shortcuts.txt'
 alias xr='v ~/.Xresources'
@@ -94,6 +94,13 @@ function nodev {
 function i3blocks_restart {
     pkill -SIGRTMIN+$1 -F /tmp/i3blocks.pid
 }
+
+function fh() {
+    CMD=$(cat $HISTFILE | fzy)
+    eval "$CMD"
+}
+bindkey -s '^f' "fh\n"
+HISTORY_IGNORE="(fh|h|i3c|vrc|poweroff|vrc|zrc)"
 
 # nice prompt:
 source /usr/share/powerlevel9k/powerlevel9k.zsh-theme
