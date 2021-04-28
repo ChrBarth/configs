@@ -127,24 +127,26 @@ set laststatus=2
 augroup php_html
     autocmd!
     " Autocommands php/html editing:
-    au FileType php,html inoremap <leader>p <p></p><Esc>FpT>i
-    au FileType php,html inoremap <leader>d <div></div><Esc>FdT>i
-    au FileType php,html inoremap <leader>a <a href=""></a><Esc>FaT>i
-    au FileType php,html inoremap <leader>img <img src=""><Esc>2T"i
-    au FileType php,html inoremap <leader>b <b></b><Esc>FbT>i
-    au FileType php,html inoremap <leader>e <em></em><Esc>FeT>i
-    au FileType php,html inoremap <leader>ul <ul><Return></ul><Esc>O
-    au FileType php,html inoremap <leader>l <li><Esc>a
-    au FileType php,html inoremap <leader>1 <h1></h1><Esc>FhT>i
-    au FileType php,html inoremap <leader>2 <h2></h2><Esc>FhT>i
-    au FileType php,html inoremap <leader>3 <h3></h3><Esc>FhT>i
-    au FileType php,html inoremap <leader>tb <table><Return></table><Return><Esc>kO
-    au FileType php,html inoremap <leader>th <th></th><Esc>FtT>i
-    au FileType php,html inoremap <leader>tr <tr></tr><Esc>FtT>i
-    au FileType php,html inoremap <leader>td <td></td><Esc>FtT>i
-    au FileType php inoremap <leader>c <Esc>I/*  */<Esc>hhi
+    au FileType php,html nnoremap <leader>p <p></p><Esc>FpT>i
+    au FileType php,html nnoremap <leader>d <div></div><Esc>FdT>i
+    au FileType php,html nnoremap <leader>a <a href=""></a><Esc>FaT>i
+    au FileType php,html nnoremap <leader>img <img src=""><Esc>2T"i
+    au FileType php,html nnoremap <leader>b <b></b><Esc>FbT>i
+    au FileType php,html nnoremap <leader>e <em></em><Esc>FeT>i
+    au FileType php,html nnoremap <leader>ul <ul><Return></ul><Esc>O
+    au FileType php,html nnoremap <leader>l <li><Esc>a
+    au FileType php,html nnoremap <leader>tb <table><Return></table><Return><Esc>kO
+    au FileType php,html nnoremap <leader>th <th></th><Esc>FtT>i
+    au FileType php,html nnoremap <leader>tr <tr></tr><Esc>FtT>i
+    au FileType php,html nnoremap <leader>td <td></td><Esc>FtT>i
+    au FileType php,html nnoremap <leader>1 i<h1></h1><Esc>FhT>i
+    au FileType php,html nnoremap <leader>2 i<h2></h2><Esc>FhT>i
+    au FileType php,html nnoremap <leader>3 i<h3></h3><Esc>FhT>i
+    au FileType php,html nnoremap <leader>v i<!--<Return>--><Esc>O
+    au FileType php,html nnoremap <leader>V i<!-- --><Esc>3F-a
+    au FileType php nnoremap <leader>c <Esc>I/*  */<Esc>hhi
     au FileType php vnoremap <leader>c I//<Esc>
-    au FileType php inoremap <leader>php <?php  ?><Esc>Tpi
+    au FileType php nnoremap <leader>php <?php  ?><Esc>Tpi
 augroup END
 
 augroup python_programming
