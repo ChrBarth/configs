@@ -11,6 +11,9 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# so 'cd ..<TAB>' autocompletes 'to cd ../':
+zstyle ':completion:*' special-dirs true
+
 #export TERM="rxvt-unicode"
 export TERM="xterm-256color"
 setopt auto_cd  
@@ -76,6 +79,7 @@ alias sgc='cd ~/src/git/configs'
 alias sgi='cd ~/src/git/i3wm-configs'
 alias sgh='cd ~/src/git/cheatsheets'
 alias sp='cd ~/src/python'
+alias pp='cd ~/src/git/pypod/ && ./pypod_gui.py'
 
 # build a little dev-environment with tmux, a python-interpreter and a shell
 function pydev {

@@ -173,7 +173,7 @@ function doom2 {
 
 #PROMPT_COMMAND='echo -ne "\033]0; ::xterm:: \007"'
 
-PATH="$PATH:$HOME/bin:$HOME/.local/bin"
+#PATH="$PATH:$HOME/bin:$HOME/.local/bin"
 PAGER="less"
 EDITOR="vim"
 export DOOMWADDIR="$HOME/Spiele/odamex:$HOME/.config/gzdoom:$HOME/Spiele/wads:$HOME/Spiele/wads/eigene"

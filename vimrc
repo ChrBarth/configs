@@ -54,6 +54,7 @@ vno <up> <Nop>
 vno <left> <Nop>
 vno <right> <Nop>
 " switch word with next one (does not always work as expected):
+nnoremap <Leader>< :syntax sync fromstart
 nnoremap <Leader>sw bvelxel"-p
 nnoremap <Leader>sW BvElxEl"-p
 nnoremap / /\v
