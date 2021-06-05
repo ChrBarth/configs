@@ -11,7 +11,8 @@ syntax enable
 set autoindent
 set breakindent
 colo desert
-let mapleader = ","
+"let mapleader = ","
+let mapleader = " "
 
 " expand tabs to spaces
 set expandtab
