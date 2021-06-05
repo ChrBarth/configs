@@ -106,5 +106,9 @@ function fh() {
 bindkey -s '^f' "fh\n"
 HISTORY_IGNORE="(fh|h|i3c|vrc|poweroff|vrc|zrc)"
 
+function doom2 {
+    gzdoom $@ -iwad DOOM2.WAD
+}
+
 # nice prompt:
 source /usr/share/powerlevel9k/powerlevel9k.zsh-theme
