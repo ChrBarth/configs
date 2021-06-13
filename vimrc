@@ -20,6 +20,8 @@ set expandtab
 set tabstop=4
 " indented lines (">") also 4 spaces
 set shiftwidth=4
+" start scrolling when 8 lines from top/bottom:
+set scrolloff=8
 
 set linespace=2
 "set number
