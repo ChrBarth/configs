@@ -111,4 +111,8 @@ function doom2 {
 }
 
 # nice prompt:
+POWERLEVEL9K_VI_COMMAND_MODE_STRING="N"
+POWERLEVEL9K_VI_INSERT_MODE_STRING="I"
+POWERLEVEL9K_VI_MODE_INSERT_BACKGROUND="047"
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(vi_mode dir vcs)
 source /usr/share/powerlevel9k/powerlevel9k.zsh-theme
