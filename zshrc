@@ -80,6 +80,8 @@ alias sgi='cd ~/src/git/i3wm-configs'
 alias sgh='cd ~/src/git/cheatsheets'
 alias sp='cd ~/src/python'
 alias pp='cd ~/src/git/pypod/ && ./pypod_gui.py'
+alias fn='find ~/Dokumente/Notizen -type f | fzy | xargs -o -r vim'
+bindkey -s '^n' "fn\n"
 
 # build a little dev-environment with tmux, a python-interpreter and a shell
 function pydev {
