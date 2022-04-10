@@ -110,6 +110,7 @@ alias myip="ip -o -4 a | awk '/enp/ { split(\$4, a, \"/\"); print a[1] }'"
 
 # webcam stuff:
 # displays the webcams output using mplayer:
+alias cheese='LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libv4l/v4l1compat.so cheese'
 alias showcam='mplayer tv:// -tv driver=v4l2:width=1280:height=720:device=/dev/video0'
 # records from webcam to file:
 alias recordcam='ffmpeg -v 0 -hide_banner -f video4linux2 -s 1920x1080 -i /dev/video0 ~/Videos/EigeneVideos/wc_$(date +"%Y-%m-%d_%H%M%S").mkv'

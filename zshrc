@@ -14,11 +14,14 @@ compinit
 # so 'cd ..<TAB>' autocompletes 'to cd ../':
 zstyle ':completion:*' special-dirs true
 
+# disable Ctrl-S / Ctrl-Q:
+setopt noflowcontrol
+
 #export TERM="rxvt-unicode"
 export TERM="xterm-256color"
 setopt auto_cd  
 
-PATH="$PATH:$HOME/src/python/tools"
+PATH="$PATH:$HOME/src/python/tools:$HOME/.local/bin"
 
 # suffix aliases - nice :)
 alias -s txt="vim"
@@ -80,8 +83,10 @@ alias sgi='cd ~/src/git/i3wm-configs'
 alias sgh='cd ~/src/git/cheatsheets'
 alias sp='cd ~/src/python'
 alias pp='cd ~/src/git/pypod/ && ./pypod_gui.py'
-alias fn='find ~/Dokumente/Notizen -type f | fzy | xargs -o -r vim'
+#alias fn='find ~/Dokumente/Notizen -type f | fzy | xargs -o -r vim'
+alias fn='fdfind -t f . ~/Dokumente/Notizen | fzy | xargs -o -r vim'
 bindkey -s '^n' "fn\n"
+bindkey -s '^z' "vim ~/.zshrc\n"
 
 # build a little dev-environment with tmux, a python-interpreter and a shell
 function pydev {
@@ -111,6 +116,18 @@ HISTORY_IGNORE="(fh|h|i3c|vrc|poweroff|vrc|zrc)"
 function doom2 {
     gzdoom $@ -iwad DOOM2.WAD
 }
+
+function ripsong {
+    if [ $# -ne 2 ]
+    then
+        echo "usage: ripsong [trackno] [outfile]"
+    else
+        icedax -t $1 -D /dev/cdrom - | lame --abr 256 - $2
+    fi
+}
+
+# private stuff goes here:
+source ~/.zshrc_private
 
 # nice prompt:
 POWERLEVEL9K_VI_COMMAND_MODE_STRING="N"

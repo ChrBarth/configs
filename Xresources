@@ -20,8 +20,8 @@ UXTerm*geometry:	132x40
 #define fontsize 20
 #define fontsizelarge 22
 #define fontfamily2 Comic Shanns Regular
-*Rxvt.letterSpace: -1
-*Rxvt.lineSpace: -1
+*Rxvt.letterSpace: -2
+*Rxvt.lineSpace: -2
 !increase spacing between characters so some 
 !special ones get displayed
 *Rxvt*transparent:	true

@@ -41,8 +41,8 @@ set foldmethod=marker
 " key mappings: {{{
 " from https://www.youtube.com/watch?v=2pqipq-UEwQ:
 " (disable arrow keys, leader+up and down move line up/down)
-no <Leader><down> ddp
-no <Leader><up> ddkP
+"no <Leader><down> ddp
+"no <Leader><up> ddkP
 no <left> <Nop>
 no <down> <Nop>
 no <right> <Nop>
@@ -56,7 +56,26 @@ vno <down> <Nop>
 vno <up> <Nop>
 vno <left> <Nop>
 vno <right> <Nop>
-" switch word with next one (does not always work as expected):
+
+" from https://youtu.be/hSHATqh8svM0:
+" keeping the cursor centered when jumping from one search result to the next:
+nnoremap n nzzzv
+nnoremap N Nzzzv
+" keep the cursor position when joining lines:
+nnoremap J mzJ'z
+" enable undo after every ,.; in insert-mode
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ; ;<c-g>u
+" move selection up or down (keep selection):
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+" move current line up or down (insert/normal mode):
+inoremap <C-j> <ESC>:m .+1<CR>==
+inoremap <C-k> <ESC>:m .-2<CR>==
+nnoremap <leader>j :m .+1<CR>==
+nnoremap <leader>k :m .-2<CR>==
+
 nnoremap <Leader>< :syntax sync fromstart
 nnoremap <Leader>sw bvelxel"-p
 nnoremap <Leader>sW BvElxEl"-p
@@ -80,6 +99,9 @@ vnoremap <Leader>(( <Esc>`<i(<Esc>`>a)
 vnoremap <Leader>[[ <Esc>`<i[<Esc>`>a]
 vnoremap <Leader>{{ <Esc>`<i{<Esc>`>a}
 vnoremap <Leader>`` <Esc>`<i`<Esc>`>la`
+" keep selection after indenting:
+vnoremap > >gv
+vnoremap < <gv
 " guitar-tab-shortcut: --
 nnoremap -- :normal! i-<Esc>vy79pVy5p4jo<CR><CR><Esc>
 " Taktstriche: II (fügt einen Taktstrich ein, Cursor muss sich auf oberster Tab-Linie befinden)
@@ -98,7 +120,7 @@ nnoremap <leader>n :tabnew<CR>:Explore ~/Dokumente/Notizen<CR>
 nnoremap <Leader><Space> viw
 nnoremap <Leader><Space><Space> viW
 nnoremap <c-a> ggVG
-vnoremap <Leader>C "+y
+vnoremap <Leader>C "+ygv
 nnoremap <Leader>V "+p
 vnoremap <Leader>X "+x
 nnoremap <Leader>h :nohlsearch<CR>
