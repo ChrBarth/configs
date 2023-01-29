@@ -63,7 +63,6 @@ alias xpaste='xclip -out -selection clipboard'
 alias xcopy='xclip -in -selection clipboard'
 alias xm='xrdb -merge ~/.Xresources'
 alias xlog='journalctl -u session-${XDG_SESSION_ID}.scope -r'
-alias dlna='minidlnad -f ~/.config/minidlna.conf -P ~/temp/minidlna_pid'
 alias cpma='q3start.sh +set fs_game cpma +exec c_cpma.cfg'
 alias ctf='cpma +exec c_ctf.cfg'
 alias ictf='cpma +exec c_ictf.cfg'
@@ -110,6 +109,22 @@ function fh() {
     CMD=$(cat $HISTFILE | fzy)
     eval "$CMD"
 }
+
+function dlna() {
+    if [[ "$1" = "start" ]]
+    then
+        echo "starting minidlnad..."
+        minidlnad -f ~/.config/minidlna.conf -P ~/temp/minidlna_pid
+    elif [[ "$1" = "stop" ]]
+    then
+        echo "stopping minidlnad..."
+        killall minidlnad
+    else
+        echo "use start/stop to start/stop minidlnad"
+        ps ax | grep minidlnad
+    fi
+    }
+    
 bindkey -s '^f' "fh\n"
 HISTORY_IGNORE="(fh|h|i3c|vrc|poweroff|vrc|zrc)"
 
