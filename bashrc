@@ -177,7 +177,8 @@ function doom2 {
 #PATH="$PATH:$HOME/bin:$HOME/.local/bin"
 PAGER="less"
 EDITOR="vim"
-export DOOMWADDIR="$HOME/Spiele/odamex:$HOME/.config/gzdoom:$HOME/Spiele/wads:$HOME/Spiele/wads/eigene"
+#export DOOMWADDIR="$HOME/Spiele/odamex:$HOME/.config/gzdoom:$HOME/Spiele/wads:$HOME/Spiele/wads/eigene"
+export DOOMWADDIR="/media/sdb1/Spiele/wads"
 
 export HISTIGNORE="clear:history:cls:i3c:brc:vrc:poweroff"
 export HISTCONTROL="ignoreboth"
