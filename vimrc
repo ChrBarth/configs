@@ -73,6 +73,9 @@ vnoremap K :m '<-2<CR>gv=gv
 " move current line up or down (insert/normal mode):
 inoremap <C-j> <ESC>:m .+1<CR>==
 inoremap <C-k> <ESC>:m .-2<CR>==
+" center view when scrolling half page up/down
+nnoremap <c-u> <c-u>zz
+nnoremap <c-d> <c-d>zz
 nnoremap <leader>j :m .+1<CR>==
 nnoremap <leader>k :m .-2<CR>==
 
@@ -133,16 +136,16 @@ nnoremap <F11> <Esc>:Explore<CR>
 
 " StatusLine stuff: {{{
 " change Color of StatusLine when inserting/replacing:
-hi TabLineSel ctermfg=7 ctermbg=0
-hi TabLine ctermfg=15 ctermbg=10
-hi TabLineFill ctermfg=10 ctermbg=15
+hi TabLineSel ctermfg=7 ctermbg=234
+hi TabLine ctermfg=244 ctermbg=234
+hi TabLineFill ctermfg=234 ctermbg=244
 
-au InsertEnter * hi StatusLine ctermfg=200 ctermbg=15
-au InsertLeave * hi StatusLine ctermfg=23 ctermbg=15
+au InsertEnter * hi StatusLine ctermfg=234 ctermbg=46
+au InsertLeave * hi StatusLine ctermfg=234 ctermbg=244
 
 " default color of StatusLine:
-hi StatusLineNC ctermfg=10 ctermbg=15
-hi StatusLine ctermfg=23 ctermbg=15
+hi StatusLineNC ctermfg=234 ctermbg=244
+hi StatusLine ctermfg=234 ctermbg=244
 
 " StatusLine format:
 set statusline=%<%f\ [%{strlen(&fenc)?&fenc:'none'}]\ %h%m%r%=%-14.(%l,%c%V%)\ %P
