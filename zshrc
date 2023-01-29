@@ -62,7 +62,7 @@ alias ircoff='sudo systemctl stop ngircd.service'
 alias xpaste='xclip -out -selection clipboard'
 alias xcopy='xclip -in -selection clipboard'
 alias xm='xrdb -merge ~/.Xresources'
-alias xlog='journalctl -u session-${XDG_SESSION_ID}.scope'
+alias xlog='journalctl -u session-${XDG_SESSION_ID}.scope -r'
 alias dlna='minidlnad -f ~/.config/minidlna.conf -P ~/temp/minidlna_pid'
 alias cpma='q3start.sh +set fs_game cpma +exec c_cpma.cfg'
 alias ctf='cpma +exec c_ctf.cfg'
@@ -113,9 +113,12 @@ function fh() {
 bindkey -s '^f' "fh\n"
 HISTORY_IGNORE="(fh|h|i3c|vrc|poweroff|vrc|zrc)"
 
-function doom2 {
-    gzdoom $@ -iwad DOOM2.WAD
-}
+alias doom2='prboom-plus -iwad /media/sdb1/Spiele/wads/DOOM2.WAD'
+alias doom='prboom-plus -iwad /media/sdb1/Spiele/wads/DOOM.WAD'
+alias sunlust='doom2 -file /media/sdb1/Spiele/wads/sunlust.wad'
+#function doom2 {
+#    gzdoom $@ -iwad DOOM2.WAD
+#}
 
 function ripsong {
     if [ $# -ne 2 ]
