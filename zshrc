@@ -114,7 +114,7 @@ function dlna() {
     if [[ "$1" = "start" ]]
     then
         echo "starting minidlnad..."
-        minidlnad -f ~/.config/minidlna.conf -P ~/temp/minidlna_pid
+        minidlnad -f ~/.config/minidlna.conf -r -P ~/temp/minidlna_pid
     elif [[ "$1" = "stop" ]]
     then
         echo "stopping minidlnad..."
