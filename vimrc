@@ -34,6 +34,8 @@ set wildmenu
 set hlsearch
 set incsearch
 set path+=**
+set rtp+=~/.fzf
+
 "folding:
 set foldmethod=marker
 " }}}
@@ -130,8 +132,11 @@ nnoremap <Leader>h :nohlsearch<CR>
 " F5 in insert-Mode: insert date+time:
 inoremap <F5> <C-R>=strftime("%c")<CR>
 " open file browser on the left side
-nnoremap <F12> :leftabove vnew<CR><Esc>:Explore<CR><Esc>:vertical resize 40<CR>
-nnoremap <F11> <Esc>:Explore<CR>
+nnoremap <F11> <Esc>:Lexplore<CR><Esc>:vertical resize 40<CR>
+"nnoremap <F11> :leftabove vnew<CR><Esc>:Explore<CR><Esc>:vertical resize 40<CR>
+nnoremap <F12> <Esc>:Explore<CR>
+" fzf:
+nnoremap <Leader>f <Esc>:FZF<CR>
 " }}}
 
 " StatusLine stuff: {{{
@@ -140,8 +145,8 @@ hi TabLineSel ctermfg=7 ctermbg=234
 hi TabLine ctermfg=244 ctermbg=234
 hi TabLineFill ctermfg=234 ctermbg=244
 
-au InsertEnter * hi StatusLine ctermfg=234 ctermbg=46
-au InsertLeave * hi StatusLine ctermfg=234 ctermbg=244
+au InsertEnter * hi StatusLine ctermfg=214 ctermbg=0
+au InsertLeave * hi StatusLine ctermfg=232 ctermbg=244
 
 " default color of StatusLine:
 hi StatusLineNC ctermfg=234 ctermbg=244
