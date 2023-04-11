@@ -57,8 +57,6 @@ alias ssh_on='sudo systemctl start ssh.service'
 alias ssh_off='sudo systemctl stop ssh.service'
 alias apache_on='sudo systemctl start apache2'
 alias apache_off='sudo systemctl stop apache2'
-alias ircon='sudo systemctl start ngircd.service'
-alias ircoff='sudo systemctl stop ngircd.service'
 alias xpaste='xclip -out -selection clipboard'
 alias xcopy='xclip -in -selection clipboard'
 alias xm='xrdb -merge ~/.Xresources'
@@ -89,12 +87,12 @@ bindkey -s '^z' "vim ~/.zshrc\n"
 
 # build a little dev-environment with tmux, a python-interpreter and a shell
 function pydev {
-    tmux split-window -h \; split-window "python3" && tmux select-pane -t 0 && vim $@
+    tmux split-window -h \; split-window "python3" && tmux select-pane -t 0 && tmux resize-pane -x 120 && vim $@
 }
 
 # do the same thing but not for python
 function devsplit {
-    tmux split-window -h && tmux select-pane -t 0 && vim $@
+    tmux split-window -h && tmux select-pane -t 0 && tmux resize-pane -x 120 && vim $@
 }
 
 function nodev {
