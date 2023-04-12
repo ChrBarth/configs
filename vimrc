@@ -2,6 +2,12 @@
 
 " misc settings: {{{
 
+" plug.vim:
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+call plug#end()
+
 " Lilypond:
 filetype off
 set runtimepath+=/usr/share/lilypond/2.18.2/vim/
@@ -64,7 +70,7 @@ vno <right> <Nop>
 nnoremap n nzzzv
 nnoremap N Nzzzv
 " keep the cursor position when joining lines:
-nnoremap J mzJ'z
+nnoremap J mzJ`z
 " enable undo after every ,.; in insert-mode
 inoremap , ,<c-g>u
 inoremap . .<c-g>u
@@ -78,8 +84,8 @@ inoremap <C-k> <ESC>:m .-2<CR>==
 " center view when scrolling half page up/down
 nnoremap <c-u> <c-u>zz
 nnoremap <c-d> <c-d>zz
-nnoremap <leader>j :m .+1<CR>==
-nnoremap <leader>k :m .-2<CR>==
+nnoremap <Leader>j :m .+1<CR>==
+nnoremap <Leader>k :m .-2<CR>==
 
 nnoremap <Leader>< :syntax sync fromstart
 nnoremap <Leader>sw bvelxel"-p
@@ -113,15 +119,15 @@ nnoremap -- :normal! i-<Esc>vy79pVy5p4jo<CR><CR><Esc>
 nnoremap II :normal! R\|<Esc>jR\|<Esc>jR\|<Esc>jR\|<Esc>jR\|<Esc>jR\|<Esc>5kl<Esc>
 nnoremap <leader>t :tabnew<CR>
 " shortcuts for some often used configs
-nnoremap <leader>brc :tabnew<CR>:edit ~/.config/bashrc_base<CR>
-nnoremap <leader>vrc :tabnew<CR>:edit $MYVIMRC<CR>
-nnoremap <leader>i3c :tabnew<CR>:edit ~/.config/i3/config<CR>
-nnoremap <leader>rrc :tabnew<CR>:edit ~/.config/ranger_base.conf<CR>
-nnoremap <leader>xr :tabnew<CR>:edit ~/.Xresources<CR>
-nnoremap <leader>fs :tabnew<CR>:edit ~/.config/folder_shortcuts.txt<CR>
-nnoremap <leader>sv :source $MYVIMRC<CR><CR>
-nnoremap <leader>vc :tabnew<CR>:edit ~/src/git/cheatsheets/vim-cheatsheet.md<CR>
-nnoremap <leader>n :tabnew<CR>:Explore ~/Dokumente/Notizen<CR>
+nnoremap <Leader>brc :tabnew<CR>:edit ~/.config/bashrc_base<CR>
+nnoremap <Leader>vrc :tabnew<CR>:edit $MYVIMRC<CR>
+nnoremap <Leader>i3c :tabnew<CR>:edit ~/.config/i3/config<CR>
+nnoremap <Leader>rrc :tabnew<CR>:edit ~/.config/ranger_base.conf<CR>
+nnoremap <Leader>xr :tabnew<CR>:edit ~/.Xresources<CR>
+nnoremap <Leader>fs :tabnew<CR>:edit ~/.config/folder_shortcuts.txt<CR>
+nnoremap <Leader>sv :source $MYVIMRC<CR><CR>
+nnoremap <Leader>vc :tabnew<CR>:edit ~/src/git/cheatsheets/vim-cheatsheet.md<CR>
+nnoremap <Leader>n :tabnew<CR>:Explore ~/Dokumente/Notizen<CR>
 nnoremap <Leader><Space> viw
 nnoremap <Leader><Space><Space> viW
 nnoremap <c-a> ggVG
@@ -135,8 +141,12 @@ inoremap <F5> <C-R>=strftime("%c")<CR>
 nnoremap <F11> <Esc>:Lexplore<CR><Esc>:vertical resize 40<CR>
 "nnoremap <F11> :leftabove vnew<CR><Esc>:Explore<CR><Esc>:vertical resize 40<CR>
 nnoremap <F12> <Esc>:Explore<CR>
-" fzf:
-nnoremap <Leader>f <Esc>:FZF<CR>
+"
+" fzf-vim:
+nnoremap <Leader>f <Esc>:Files<CR>
+nnoremap <Leader>g <Esc>:GFiles<CR>
+nnoremap <Leader>w <Esc>:Windows<CR>
+nnoremap <Leader>b <Esc>:Buffers<CR>
 " }}}
 
 " StatusLine stuff: {{{
@@ -161,26 +171,26 @@ set laststatus=2
 augroup php_html
     autocmd!
     " Autocommands php/html editing:
-    au FileType php,html nnoremap <leader>p <p></p><Esc>FpT>i
-    au FileType php,html nnoremap <leader>d <div></div><Esc>FdT>i
-    au FileType php,html nnoremap <leader>a <a href=""></a><Esc>FaT>i
-    au FileType php,html nnoremap <leader>img <img src=""><Esc>2T"i
-    au FileType php,html nnoremap <leader>b <b></b><Esc>FbT>i
-    au FileType php,html nnoremap <leader>e <em></em><Esc>FeT>i
-    au FileType php,html nnoremap <leader>ul <ul><Return></ul><Esc>O
-    au FileType php,html nnoremap <leader>l <li><Esc>a
-    au FileType php,html nnoremap <leader>tb <table><Return></table><Return><Esc>kO
-    au FileType php,html nnoremap <leader>th <th></th><Esc>FtT>i
-    au FileType php,html nnoremap <leader>tr <tr></tr><Esc>FtT>i
-    au FileType php,html nnoremap <leader>td <td></td><Esc>FtT>i
-    au FileType php,html nnoremap <leader>1 i<h1></h1><Esc>FhT>i
-    au FileType php,html nnoremap <leader>2 i<h2></h2><Esc>FhT>i
-    au FileType php,html nnoremap <leader>3 i<h3></h3><Esc>FhT>i
-    au FileType php,html nnoremap <leader>v i<!--<Return>--><Esc>O
-    au FileType php,html nnoremap <leader>V i<!-- --><Esc>3F-a
-    au FileType php nnoremap <leader>c <Esc>I/*  */<Esc>hhi
-    au FileType php vnoremap <leader>c I//<Esc>
-    au FileType php nnoremap <leader>php <?php  ?><Esc>Tpi
+    au FileType php,html nnoremap <Leader>p <p></p><Esc>FpT>i
+    au FileType php,html nnoremap <Leader>d <div></div><Esc>FdT>i
+    au FileType php,html nnoremap <Leader>a <a href=""></a><Esc>FaT>i
+    au FileType php,html nnoremap <Leader>img <img src=""><Esc>2T"i
+    au FileType php,html nnoremap <Leader>b <b></b><Esc>FbT>i
+    au FileType php,html nnoremap <Leader>e <em></em><Esc>FeT>i
+    au FileType php,html nnoremap <Leader>ul <ul><Return></ul><Esc>O
+    au FileType php,html nnoremap <Leader>l <li><Esc>a
+    au FileType php,html nnoremap <Leader>tb <table><Return></table><Return><Esc>kO
+    au FileType php,html nnoremap <Leader>th <th></th><Esc>FtT>i
+    au FileType php,html nnoremap <Leader>tr <tr></tr><Esc>FtT>i
+    au FileType php,html nnoremap <Leader>td <td></td><Esc>FtT>i
+    au FileType php,html nnoremap <Leader>1 i<h1></h1><Esc>FhT>i
+    au FileType php,html nnoremap <Leader>2 i<h2></h2><Esc>FhT>i
+    au FileType php,html nnoremap <Leader>3 i<h3></h3><Esc>FhT>i
+    au FileType php,html nnoremap <Leader>v i<!--<Return>--><Esc>O
+    au FileType php,html nnoremap <Leader>V i<!-- --><Esc>3F-a
+    au FileType php nnoremap <Leader>c <Esc>I/*  */<Esc>hhi
+    au FileType php vnoremap <Leader>c I//<Esc>
+    au FileType php nnoremap <Leader>php <?php  ?><Esc>Tpi
 augroup END
 
 augroup python_programming
@@ -192,10 +202,10 @@ augroup lilypond
 	autocmd!
     source $HOME/.vim/include/lilycomp.vim
 	au FileType lilypond nnoremap <Leader>c I%<Esc>
-    au filetype lilypond inoremap <leader>rv \repeat volta 2 {  }<Esc>hi
+    au filetype lilypond inoremap <Leader>rv \repeat volta 2 {  }<Esc>hi
     au FileType lilypond inoremap <Leader>ru \repeat unfold 2 {  }<Esc>hi
     " creates pdf from lilypond-file and previews it with xdg-open:
-    au FileType lilypond nnoremap <leader>lc :execute "call LilyComp()"<CR>
+    au FileType lilypond nnoremap <Leader>lc :execute "call LilyComp()"<CR>
 augroup END
 
 augroup special_filetypes
