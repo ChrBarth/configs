@@ -85,6 +85,10 @@ alias fn='fdfind -t f . ~/Dokumente/Notizen | fzy | xargs -o -r vim'
 bindkey -s '^n' "fn\n"
 bindkey -s '^z' "vim ~/.zshrc\n"
 
+# ripgrep/fzf searching:
+function rf {
+    rg $1 $(fzf)
+}
 # build a little dev-environment with tmux, a python-interpreter and a shell
 function pydev {
     tmux split-window -h \; split-window "python3" && tmux select-pane -t 0 && tmux resize-pane -x 120 && vim $@
