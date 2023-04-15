@@ -6,6 +6,8 @@
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'JosefLitos/vim-i3config'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " Lilypond:
@@ -122,7 +124,6 @@ nnoremap <leader>t :tabnew<CR>
 nnoremap <Leader>brc :tabnew<CR>:edit ~/.config/bashrc_base<CR>
 nnoremap <Leader>vrc :tabnew<CR>:edit $MYVIMRC<CR>
 nnoremap <Leader>i3c :tabnew<CR>:edit ~/.config/i3/config<CR>
-nnoremap <Leader>rrc :tabnew<CR>:edit ~/.config/ranger_base.conf<CR>
 nnoremap <Leader>xr :tabnew<CR>:edit ~/.Xresources<CR>
 nnoremap <Leader>fs :tabnew<CR>:edit ~/.config/folder_shortcuts.txt<CR>
 nnoremap <Leader>sv :source $MYVIMRC<CR><CR>
@@ -147,6 +148,7 @@ nnoremap <Leader>f <Esc>:Files<CR>
 nnoremap <Leader>g <Esc>:GFiles<CR>
 nnoremap <Leader>w <Esc>:Windows<CR>
 nnoremap <Leader>b <Esc>:Buffers<CR>
+nnoremap <leader>r <Esc>:Rg 
 " }}}
 
 " StatusLine stuff: {{{
@@ -214,5 +216,14 @@ augroup special_filetypes
     au BufRead,BufNewFile *.rasi set filetype=css
     au BufRead,BufNewFile ~/Mail/account.* set filetype=muttrc
 augroup END
-" }}}
 
+aug i3config_ft_detection
+  au!
+  au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
+aug END
+
+aug q3config_detection
+  au!
+  au BufNewFile,BufRead ~/.q3a/*.cfg set filetype=quake3
+aug END
+" }}}
