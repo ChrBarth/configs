@@ -18,7 +18,7 @@ zstyle ':completion:*' special-dirs true
 setopt noflowcontrol
 
 #export TERM="rxvt-unicode"
-export TERM="xterm-256color"
+#export TERM="xterm-256color"
 setopt auto_cd  
 
 PATH="$PATH:$HOME/src/python/tools:$HOME/.local/bin"
@@ -60,7 +60,7 @@ alias apache_off='sudo systemctl stop apache2'
 alias xpaste='xclip -out -selection clipboard'
 alias xcopy='xclip -in -selection clipboard'
 alias xm='xrdb -merge ~/.Xresources'
-alias xlog='journalctl -u session-${XDG_SESSION_ID}.scope -r'
+alias xlog='journalctl -f -u session-${XDG_SESSION_ID}.scope'
 alias cpma='q3start.sh +set fs_game cpma +exec c_cpma.cfg'
 alias ctf='cpma +exec c_ctf.cfg'
 alias ictf='cpma +exec c_ictf.cfg'
@@ -69,7 +69,7 @@ alias 1v1='cpma +exec c_1v1.cfg'
 alias ffa='cpma +exec c_ffa.cfg'
 alias iffa='cpma +exec c_iffa.cfg'
 alias q3df='q3start.sh +set fs_game defrag'
-alias qw='~/Spiele/nquake/ezquake-linux-x86_64'
+alias qw='~/Spiele/nquake/ezQuake-x86_64.AppImage'
 alias qtv='~/Spiele/nquake/ezquake-linux-x86_64 +qwurl'
 alias odadm='odasrv -config ~/.odamex/odasrv_deathmatch.cfg'
 alias odacoop='odasrv -config ~/.odamex/odasrv_coop.cfg -skill 4'
@@ -147,6 +147,8 @@ function ripsong {
     fi
 }
 
+LS_COLORS='rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=40;01;33:*.tgz=40;01;33:*.arc=40;01;33:*.arj=40;01;33:*.taz=40;01;33:*.lha=40;01;33:*.lz4=40;01;33:*.lzh=40;01;33:*.lzma=40;01;33:*.tlz=40;01;33:*.txz=40;01;33:*.tzo=40;01;33:*.t7z=40;01;33:*.zip=40;01;33:*.z=40;01;33:*.dz=40;01;33:*.gz=40;01;33:*.lrz=40;01;33:*.lz=40;01;33:*.lzo=40;01;33:*.xz=40;01;33:*.zst=40;01;33:*.tzst=40;01;33:*.bz2=40;01;33:*.bz=40;01;33:*.tbz=40;01;33:*.tbz2=40;01;33:*.tz=40;01;33:*.deb=40;01;33:*.rpm=40;01;33:*.jar=40;01;33:*.war=40;01;33:*.ear=40;01;33:*.sar=40;01;33:*.rar=40;01;33:*.alz=40;01;33:*.ace=40;01;33:*.zoo=40;01;33:*.cpio=40;01;33:*.7z=40;01;33:*.rz=40;01;33:*.cab=40;01;33:*.wim=40;01;33:*.swm=40;01;33:*.dwm=40;01;33:*.esd=40;01;33:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:';
+export LS_COLORS
 # private stuff goes here:
 source ~/.zshrc_private
 

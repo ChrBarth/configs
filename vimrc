@@ -9,6 +9,14 @@ Plug 'junegunn/fzf.vim'
 Plug 'JosefLitos/vim-i3config'
 Plug 'tpope/vim-fugitive'
 call plug#end()
+" enable :Man to view manpages in vim
+" <Leader-K> over a word jumps to its manpage
+" CTRL-] -> move to the manpage under the cursor (inside a manpage)
+" CTRL-T -> jump back to previous manpage
+runtime ftplugin/man.vim
+
+" default: 1000
+set timeoutlen=500
 
 " Lilypond:
 filetype off
@@ -46,6 +54,8 @@ set rtp+=~/.fzf
 
 "folding:
 set foldmethod=marker
+" modeline to override foldmethod:
+set modeline
 " }}}
 
 " key mappings: {{{
@@ -80,9 +90,11 @@ inoremap ; ;<c-g>u
 " move selection up or down (keep selection):
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+" remap digraph key to C-d
+inoremap <C-g> <C-k>
 " move current line up or down (insert/normal mode):
-inoremap <C-j> <ESC>:m .+1<CR>==
-inoremap <C-k> <ESC>:m .-2<CR>==
+inoremap <C-j> <ESC>:m .+1<CR>==i
+inoremap <C-k> <ESC>:m .-2<CR>==i
 " center view when scrolling half page up/down
 nnoremap <c-u> <c-u>zz
 nnoremap <c-d> <c-d>zz
@@ -158,11 +170,11 @@ hi TabLine ctermfg=244 ctermbg=234
 hi TabLineFill ctermfg=234 ctermbg=244
 
 au InsertEnter * hi StatusLine ctermfg=214 ctermbg=0
-au InsertLeave * hi StatusLine ctermfg=232 ctermbg=244
+au InsertLeave * hi StatusLine ctermfg=232 ctermbg=214
 
 " default color of StatusLine:
-hi StatusLineNC ctermfg=234 ctermbg=244
-hi StatusLine ctermfg=234 ctermbg=244
+hi StatusLineNC ctermfg=238 ctermbg=244
+hi StatusLine ctermfg=232 ctermbg=214
 
 " StatusLine format:
 set statusline=%<%f\ [%{strlen(&fenc)?&fenc:'none'}]\ %h%m%r%=%-14.(%l,%c%V%)\ %P

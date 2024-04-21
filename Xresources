@@ -6,13 +6,6 @@ Xft.hintstyle:	hintslight
 Xft.autohint:	false
 Xft.lcdfilter:	lcddefault
 
-UXTerm*renderFont:	true
-UXTerm*faceName:	Ubuntu Mono
-UXTerm*faceSize:	14
-UXTerm*background:	black
-UXTerm*foreground:	white
-UXTerm*geometry:	132x40
-
 !#define fontfamily 'DejaVu Sans Mono'
 !#define fontfamily 'Terminus Regular'
 !#define fontfamily 'Ubuntu Mono'
@@ -20,6 +13,28 @@ UXTerm*geometry:	132x40
 #define fontsize 20
 #define fontsizelarge 28
 #define fontfamily2 Comic Shanns Regular
+
+xterm*faceName: Fira Code
+xterm*faceSize: 14pt
+xterm*renderFont: true
+xterm*termName: xterm-256color
+
+xterm*VT100*translations: #override \
+Ctrl <Key> minus: smaller-vt-font() \n\
+Ctrl <Key> plus: larger-vt-font() \n\
+Ctrl <Key> 0: set-vt-font(d) \n\
+Shift <Keypress> Insert: insert-selection(CLIPBOARD) \n\
+Ctrl Shift <Key> V: insert-selection(CLIPBOARD, CUT_BUFFER0) \n\
+Ctrl Shift <Key> C: copy-selection(CLIPBOARD, CUT_BUFFER0) \n\
+Ctrl <Btn1Up>: exec-formatted("xdg-open '%t'", PRIMARY)
+
+UXTerm*renderFont:	true
+UXTerm*faceName:	Ubuntu Mono
+UXTerm*faceSize:	14
+UXTerm*background:	black
+UXTerm*foreground:	white
+UXTerm*geometry:	132x40
+
 *Rxvt.letterSpace: -2
 *Rxvt.lineSpace: -2
 !increase spacing between characters so some 
