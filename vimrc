@@ -101,15 +101,18 @@ nnoremap <c-d> <c-d>zz
 nnoremap <Leader>j :m .+1<CR>==
 nnoremap <Leader>k :m .-2<CR>==
 
+" fuzzy search for the word under the cursor in tags file
+nnoremap <Leader>T viwy<ESC>:Tags <C-r>"<CR>
+
 nnoremap <Leader>< :syntax sync fromstart
 nnoremap <Leader>sw bvelxel"-p
 nnoremap <Leader>sW BvElxEl"-p
 nnoremap / /\v
 inoremap jk <Esc>
-nnoremap <Leader>' ''<Esc>i
-nnoremap <Leader>" ""<Esc>i
-nnoremap <Leader>( ()<Esc>i
-nnoremap <Leader>[ []<Esc>i
+nnoremap <Leader>' i''<Esc>i
+nnoremap <Leader>" i""<Esc>i
+nnoremap <Leader>( i()<Esc>i
+nnoremap <Leader>[ i[]<Esc>i
 " put quotes/brackets/... around selection:
 vnoremap <Leader>" <Esc>`<i"<Esc>`>la"
 vnoremap <Leader>' <Esc>`<i'<Esc>`>la'
@@ -155,6 +158,10 @@ nnoremap <F11> <Esc>:Lexplore<CR><Esc>:vertical resize 40<CR>
 "nnoremap <F11> :leftabove vnew<CR><Esc>:Explore<CR><Esc>:vertical resize 40<CR>
 nnoremap <F12> <Esc>:Explore<CR>
 "
+nnoremap <Leader>cw <Esc>:cwindow<CR>
+nnoremap <Leader>co <Esc>:copen<CR>
+nnoremap <Leader>cn <Esc>:cnext<CR>
+nnoremap <Leader>cp <Esc>:cprevious<CR>
 " fzf-vim:
 nnoremap <Leader>f <Esc>:Files<CR>
 nnoremap <Leader>g <Esc>:GFiles<CR>
@@ -185,18 +192,18 @@ set laststatus=2
 augroup php_html
     autocmd!
     " Autocommands php/html editing:
-    au FileType php,html nnoremap <Leader>p <p></p><Esc>FpT>i
-    au FileType php,html nnoremap <Leader>d <div></div><Esc>FdT>i
-    au FileType php,html nnoremap <Leader>a <a href=""></a><Esc>FaT>i
-    au FileType php,html nnoremap <Leader>img <img src=""><Esc>2T"i
-    au FileType php,html nnoremap <Leader>b <b></b><Esc>FbT>i
-    au FileType php,html nnoremap <Leader>e <em></em><Esc>FeT>i
-    au FileType php,html nnoremap <Leader>ul <ul><Return></ul><Esc>O
-    au FileType php,html nnoremap <Leader>l <li><Esc>a
-    au FileType php,html nnoremap <Leader>tb <table><Return></table><Return><Esc>kO
-    au FileType php,html nnoremap <Leader>th <th></th><Esc>FtT>i
-    au FileType php,html nnoremap <Leader>tr <tr></tr><Esc>FtT>i
-    au FileType php,html nnoremap <Leader>td <td></td><Esc>FtT>i
+    au FileType php,html nnoremap <Leader>p i<p></p><Esc>FpT>i
+    au FileType php,html nnoremap <Leader>d i<div></div><Esc>FdT>i
+    au FileType php,html nnoremap <Leader>a i<a href=""></a><Esc>FaT>i
+    au FileType php,html nnoremap <Leader>img i<img src=""><Esc>2T"i
+    au FileType php,html nnoremap <Leader>b i<b></b><Esc>FbT>i
+    au FileType php,html nnoremap <Leader>e i<em></em><Esc>FeT>i
+    au FileType php,html nnoremap <Leader>ul i<ul><Return></ul><Esc>O
+    au FileType php,html nnoremap <Leader>l i<li><Esc>a
+    au FileType php,html nnoremap <Leader>tb i<table><Return></table><Return><Esc>kO
+    au FileType php,html nnoremap <Leader>th i<th></th><Esc>FtT>i
+    au FileType php,html nnoremap <Leader>tr i<tr></tr><Esc>FtT>i
+    au FileType php,html nnoremap <Leader>td i<td></td><Esc>FtT>i
     au FileType php,html nnoremap <Leader>1 i<h1></h1><Esc>FhT>i
     au FileType php,html nnoremap <Leader>2 i<h2></h2><Esc>FhT>i
     au FileType php,html nnoremap <Leader>3 i<h3></h3><Esc>FhT>i
@@ -210,6 +217,15 @@ augroup END
 augroup python_programming
 	autocmd!
     au FileType python nnoremap <Leader>c I#<Esc>
+    au FileType python setlocal statusline=%f
+    au FileType python setlocal statusline+=\ 
+    au FileType python setlocal statusline+=%y
+    au FileType python setlocal statusline+=\ 
+    au FileType python setlocal statusline+=[%{strlen(&fenc)?&fenc:'none'}]
+    au FileType python setlocal statusline+=%m\ 
+    au FileType python setlocal statusline+=%4l/%L
+    au FileType python setlocal foldmethod=indent
+    au FileType python setlocal foldcolumn=4
 augroup END
 
 augroup lilypond
@@ -238,4 +254,16 @@ aug q3config_detection
   au!
   au BufNewFile,BufRead ~/.q3a/*.cfg set filetype=quake3
 aug END
+" }}}
+
+" some stuff from https://learnvimscriptthehardway.stevelosh.com {{{
+nnoremap <leader>ff :call FoldColumnToggle()<cr>
+
+function! FoldColumnToggle()
+    if &foldcolumn
+        setlocal foldcolumn=0
+    else
+        setlocal foldcolumn=4
+    endif
+endfunction
 " }}}
