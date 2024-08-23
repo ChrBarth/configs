@@ -91,7 +91,7 @@ inoremap ; ;<c-g>u
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 " align text at "="
-vnoremap <Leader>A :'<,'>! column -t <bar> sed 's/ = /=/'<CR>gv=gv
+vnoremap <Leader>A :! column -t <Bar> sed 's/ = /=/'<CR>gv=gv
 " remap digraph key to C-d
 inoremap <C-g> <C-k>
 " move current line up or down (insert/normal mode):
