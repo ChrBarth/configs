@@ -139,6 +139,8 @@ nnoremap II :normal! R\|<Esc>jR\|<Esc>jR\|<Esc>jR\|<Esc>jR\|<Esc>jR\|<Esc>5kl<Es
 nnoremap <leader>t :tabnew<CR>
 " shortcuts for some often used configs
 nnoremap <Leader>brc :tabnew<CR>:edit ~/.config/bashrc_base<CR>
+nnoremap <Leader>zrc :tabnew<CR>:edit ~/.zshrc<CR>
+nnoremap <Leader>tmc :tabnew<CR>:edit ~/.tmux.conf<CR>
 nnoremap <Leader>vrc :tabnew<CR>:edit $MYVIMRC<CR>
 nnoremap <Leader>i3c :tabnew<CR>:edit ~/.config/i3/config<CR>
 nnoremap <Leader>xr :tabnew<CR>:edit ~/.Xresources<CR>
@@ -186,7 +188,15 @@ hi StatusLineNC ctermfg=238 ctermbg=244
 hi StatusLine ctermfg=232 ctermbg=214
 
 " StatusLine format:
-set statusline=%<%f\ [%{strlen(&fenc)?&fenc:'none'}]\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+set statusline=%<%f
+set statusline+=\ 
+set statusline+=[%{strlen(&fenc)?&fenc:'none'}]
+set statusline+=\ 
+set statusline+=%h%m%r
+set statusline+=%-14.(%l/%L%)
+set statusline+=%-5.(%c%V%)
+set statusline+=\ 
+set statusline+=%P
 set laststatus=2
 " }}}
 
@@ -226,8 +236,8 @@ augroup python_programming
     au FileType python setlocal statusline+=[%{strlen(&fenc)?&fenc:'none'}]
     au FileType python setlocal statusline+=%m\ 
     au FileType python setlocal statusline+=%4l/%L
-    au FileType python setlocal foldmethod=indent
-    au FileType python setlocal foldcolumn=4
+    au FileType python setlocal foldmethod=marker
+    au FileType python setlocal foldcolumn=2
 augroup END
 
 augroup lilypond
