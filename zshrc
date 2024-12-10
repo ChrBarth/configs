@@ -23,6 +23,8 @@ setopt auto_cd
 
 PATH="$PATH:$HOME/src/python/tools:$HOME/.local/bin"
 
+fpath=($HOME/.zsh $fpath)
+
 # suffix aliases - nice :)
 alias -s txt="vim"
 alias -s md="vim"
@@ -45,6 +47,7 @@ alias df='df -h'
 alias i3c='v ~/.config/i3/config'
 alias vrc='v ~/.vimrc'
 alias zrc='v ~/.zshrc'
+alias tmc='v ~/.tmux.conf'
 alias rrc='v ~/.config/ranger_base.conf'
 alias vfs='v ~/.config/folder_shortcuts.txt'
 alias xr='v ~/.Xresources'
@@ -83,8 +86,13 @@ alias sc='cd ~/src/c'
 alias pp='cd ~/src/git/pypod/ && ./pypod_gui.py'
 #alias fn='find ~/Dokumente/Notizen -type f | fzy | xargs -o -r vim'
 alias fn='fdfind -t f . ~/Dokumente/Notizen | fzy | xargs -o -r vim'
-bindkey -s '^n' "fn\n"
-bindkey -s '^z' "vim ~/.zshrc\n"
+alias fr='find ~/Studio/riffs -type f -name \*.mp3 -print0 | fzf --read0 --print0 --height=50% | xargs -o -t -r -0 mpv'
+bindkey -s '^fn' "fn\n"
+bindkey -s '^vz' "vim ~/.zshrc\n"
+bindkey -s '^vi' "vim ~/.config/i3/config\n"
+bindkey -s '^vv' "vim ~/.vimrc\n"
+bindkey -s '^fr' "fr\n"
+bindkey -s '^fh' "fh\n"
 
 # ripgrep/fzf searching:
 function rf {
@@ -128,7 +136,6 @@ function dlna() {
     fi
     }
     
-bindkey -s '^f' "fh\n"
 HISTORY_IGNORE="(fh|h|i3c|vrc|poweroff|vrc|zrc)"
 
 alias doom2='prboom-plus -iwad /media/sdb1/Spiele/wads/DOOM2.WAD'
@@ -151,6 +158,12 @@ LS_COLORS='rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:c
 export LS_COLORS
 # private stuff goes here:
 source ~/.zshrc_private
+
+# zsh-syntax-highlighting
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# zsh-autosuggestions:
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # nice prompt:
 POWERLEVEL9K_VI_COMMAND_MODE_STRING="N"
